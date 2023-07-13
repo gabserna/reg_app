@@ -156,7 +156,7 @@ set Render start command to: `npm run start`
 ![alt text](https://github.com/ctdalton/student-registration/blob/master/renderInfo.png?raw=true)
 click Create Web Service
 
-Create a MongoDB cluster on MongoDB Atlas
+# Create a MongoDB cluster on MongoDB Atlas
 Allow access from anywhere in atlas network access tab
 Create database user in Database Access tab
 Get connection url in deployment > database > connect
