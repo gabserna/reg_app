@@ -1,7 +1,5 @@
 **Registration App - Capstone Project**
-
 # Project Description
-
 This project will build a Student Registration App using Express.js as the web server, bcrypt, passport and jwt as the authentication system, and either MongoDB or Postgres as the database. The frontend of the application will be built using either React or Vue. The app will have two user roles: student and administrator. Students will be able to register and manage their own details including username, email, firstname, lastname, telephone, and address. 
 
 Students should also be able to register/unregister for courses. Administrators will be able to view the registered students and manage their details and courses. Admins should be able to: Edit all users details (username, email, firstname, lastname, telephone, address, isAdmin etc...), create/delete users. Edit all courses details (title, description, schedule, capacity, tuition_cost etc...), create/delete courses. Register/unregister any student for any course.
