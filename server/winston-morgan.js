@@ -4,23 +4,43 @@ const winston = require('winston');
 
 const app = express();
 
-//morgan for http request logging
+// Morgan for HTTP request logging
 app.use(morgan('combined'));
-//winston for general application logging
+
+// Winston for general application logging
 const logger = winston.createLogger({
-    transports:[
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: 'logfile.log'})
-        ]
+  level: 'debug',
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'logfile.log' })
+  ]
+});
+
+app.use(
+  morgan('tiny', {
+    stream: {
+      write: (message) => {
+        logger.http(message.trim());
+      }
+    }
+  })
+);
+
+app.use(express.urlencoded({ extended: false }));
+
+app.post('/add', (req, res) => {
+  let color = req.body.color;
+  logger.warn(color);
+  logger.info('Hello color');
+  res.send('done');
 });
 
 app.get('/', (req, res) => {
-    //logging an application-level event with winston
-    logger.info('Home page accessed');
-    res.send('Hello Winston and Morgan!');
+  // Logging an application-level event with Winston
+  logger.info('Home page accessed');
+  res.send('Hello Winston and Morgan!');
 });
 
-
 app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+  console.log("Server is running on port 3000");
 });
