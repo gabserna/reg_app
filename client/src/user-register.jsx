@@ -5,11 +5,8 @@ function App() {
   return (
     <>
     <div className="main">
-      <h1 id="login-header">this should be admin page?</h1>
-    
-      
-    
-      
+      <h1 id="login-header">User Registration</h1>
+
     </div>
     </>
   );
