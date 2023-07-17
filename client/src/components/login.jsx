@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import "../App.css";
 
 function App() {
   return (
@@ -19,6 +18,8 @@ function App() {
         <br />
         <input type="submit" value="Login" id="login-form-submit" />
       </form>
+      <p>New here?, click: <button>Register</button></p>
+      {/* button should trigger to user-register.jsx */}
     </div>
     </>
   );
