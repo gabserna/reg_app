@@ -5,7 +5,7 @@ function App() {
     <>
     <div className="main">
       <h1 id="login-header">Welcome!</h1>
-      <h3 id="login-header">Login with your user credentials</h3>
+      <h4 id="login-header">Login with your user credentials</h4>
       
       <div id="login-error-msg-holder">
         {/* <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p> */}
