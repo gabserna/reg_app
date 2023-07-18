@@ -9,26 +9,26 @@ function App() {
       <table>
         <thead>
         <th>UserName</th>
-        <th>Email</th>
         <th>Last Name</th>
         <th>First Name</th>
-        <th>Telephone</th>
+        <th>Phone</th>
+        <th>Email</th>
         <th>Address</th>
+        <th>Courses</th>
         </thead>
         <tbody>
-        <td>username info</td>
-        <td>email info</td>
-        <td>lastname info</td>
-        <td>firstname info</td>
-        <td>Tel</td>
-        <td>Address</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         </tbody>
       </table>
+
         <button>Edit</button>
         <button>Save</button>
-    
-      
-    
       
     </div>
     </>
