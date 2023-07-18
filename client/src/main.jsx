@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './components/register.jsx'
+import App from './components/profile.jsx'  //change filename to deploy
 import './App.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
