@@ -32,7 +32,13 @@ table, th, td {
 }
 
 .registry {
-  width: auto;
+  border: 1px solid white;
+  border-radius: 3%;
+  padding: 2em;
+}
+
+.registry input {
+  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
