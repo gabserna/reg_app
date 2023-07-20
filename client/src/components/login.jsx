@@ -1,28 +1,40 @@
-import "../App.css";
+import "../Style.css";
+import { Link } from "react-router-dom";
 
-function App() {
+function Login() {
   return (
     <>
-    <div className="main">
-      <h1 id="login-header">Welcome!</h1>
-      <h4 id="login-header">Login with your user credentials</h4>
-      
-      <div id="login-error-msg-holder">
-        {/* <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p> */}
+      <div className="main">
+        <h1 id="login-header">Welcome!</h1>
+        <h4 id="login-header">Login with your user credentials</h4>
+
+        <form id="login-form">
+          <input
+            type="text"
+            name="username"
+            id="username-field"
+            className="login-form-field"
+            placeholder="Username"
+          />
+          <br />
+          <input
+            type="password"
+            name="password"
+            id="password-field"
+            className="login-form-field"
+            placeholder="Password"
+          />
+          <br />
+          <input type="submit" value="Login" id="login-form-submit" />
+        </form>
+
+        <p>
+          New here?, click:{" "}
+          <Link to="/register">Register</Link>
+        </p>
       </div>
-      
-      <form id="login-form">
-        <input type="text" name="username" id="username-field" className="login-form-field" placeholder="Username" />
-        <br />
-        <input type="password" name="password" id="password-field" className="login-form-field" placeholder="Password" />
-        <br />
-        <input type="submit" value="Login" id="login-form-submit" />
-      </form>
-      <p>New here?, click: <button>Register</button></p>
-      {/* button should trigger to user-register.jsx */}
-    </div>
     </>
   );
 }
 
-export default App;
+export default Login;
