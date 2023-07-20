@@ -1,5 +1,5 @@
 import "../Style.css";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -27,11 +27,15 @@ function Login() {
           <br />
           <input type="submit" value="Login" id="login-form-submit" />
         </form>
-
+      {/* 
         <p>
           New here?, click:{" "}
           <Link to="/register">Register</Link>
         </p>
+
+        // try and catch statements as an event handlers
+        */}
+
       </div>
     </>
   );
