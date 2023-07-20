@@ -1,10 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './components/Login.jsx'  //change filename to deploy
-import './Style.css'
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./components/App";
+import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
+reportWebVitals();
