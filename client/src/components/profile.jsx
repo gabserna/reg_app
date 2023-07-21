@@ -4,7 +4,7 @@ import "../Style.css";
 function App() {
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className="main">
         <h1 id="login-header">User Profile</h1>
         <table>
@@ -16,6 +16,7 @@ function App() {
             <th>Email</th>
             <th>Address</th>
             <th>Courses</th>
+            <th>Actions</th>
           </thead>
           <tbody>
             <td></td>
@@ -25,11 +26,12 @@ function App() {
             <td></td>
             <td></td>
             <td></td>
+            <td>
+              <button>Edit</button>
+              <button>Save</button>
+            </td>
           </tbody>
         </table>
-
-        <button>Edit</button>
-        <button>Save</button>
       </div>
     </>
   );
