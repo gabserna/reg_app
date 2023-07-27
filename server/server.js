@@ -14,10 +14,6 @@ app.use(bodyParser.json());
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
-
-
-console.log("proces.env.PGUSER", process.env.PGUSER)
-
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
   client.query(`Select * from class_info`, (err, result)=>{

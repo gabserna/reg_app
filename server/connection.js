@@ -4,12 +4,11 @@ require("dotenv").config();
 
 const client = new Client({
     host: process.env.PGHOST,
-    user: 'postgres',
+    user: process.env.PGUSER,
     port: process.env.PGPORT,
-    password: 'postgres',
-    database: process.env.PGDATABASE
-})
-
-console.log("proces.env.PGUSER", process.env.PGUSER)
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
+    ssl: true
+});
 
 module.exports = client
