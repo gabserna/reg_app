@@ -7,6 +7,7 @@
     "node": "20.1.0"
   },
   "scripts": {
+    "dev" : "nodemon server.js",
     "build": "cd server && npm i && cd ../client && npm i && npm run build",
     "start": "node server/server.js",
     "lint": "eslint **/*.js --fix"
