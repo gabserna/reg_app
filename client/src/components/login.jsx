@@ -7,12 +7,17 @@ function Login() {
   // State to track the username and password fields (if needed in the future)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   // Handle form submission (if needed in the future)
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add your login logic here if necessary
   };
+
+  function handleShowPassword() {
+    setShowPassword(!showPassword);
+  }
 
   //NOTE: hamburger menu on responsive?
 
@@ -35,9 +40,9 @@ function Login() {
           />
           <br />
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
-            id="password-field"
+            id="myPasswd"
             className="login-form-field"
             placeholder="Password"
             value={password}
@@ -45,6 +50,14 @@ function Login() {
           />
           <br />
           <input type="submit" value="Login" id="login-form-submit" />
+          <label>
+            <input
+              type="checkbox"
+              checked={showPassword}
+              onChange={handleShowPassword}
+            />{" "}
+            show
+          </label>
         </form>
 
         <p>
@@ -54,4 +67,5 @@ function Login() {
     </>
   );
 }
+
 export default Login;
