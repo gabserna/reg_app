@@ -61,7 +61,11 @@ function Login() {
             />{" "}
             show
           </label><br />
-          <a href="/">Use your Google Account to Login</a>
+          <button type="submit" data-provider="google">
+          <span class="datt" data-provider="google"></span>
+          <span class="cba09aff6">Continue with Google</span>
+          </button>
+          {/* <a href="/">Continue with Google</a> */}
         </form>
 
         <p>
