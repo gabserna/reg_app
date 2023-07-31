@@ -8,6 +8,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Handle form submission (if needed in the future)
   const handleSubmit = (event) => {
@@ -20,6 +21,9 @@ function Login() {
   }
 
   //NOTE: hamburger menu on responsive?
+
+  // spinner
+  //step 4 of      https://contactmentor.com/how-to-add-loading-spinner-react-js/?expand_article=1
 
   return (
     <>
