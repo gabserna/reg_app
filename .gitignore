@@ -2,3 +2,4 @@ node_modules/
 rev/
 passwd/
 .env
+server/.env
