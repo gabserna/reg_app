@@ -23,7 +23,6 @@ function Login() {
 
   return (
     <>
-      <NavBar />
       <div className="main">
         <h1 id="login-header">Welcome!</h1>
         <h4 id="login-subheader">Login with your user credentials</h4>

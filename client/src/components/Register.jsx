@@ -4,7 +4,6 @@ import "../Style.css";
 function App() {
   return (
     <>
-    <NavBar />
       <div className="registry">
         <h1 id="login-header">User Registration</h1>
 
