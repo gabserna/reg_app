@@ -57,7 +57,8 @@ function Login() {
               onChange={handleShowPassword}
             />{" "}
             show
-          </label>
+          </label><br />
+          <a href="/">Use your Google Account to Login</a>
         </form>
 
         <p>
