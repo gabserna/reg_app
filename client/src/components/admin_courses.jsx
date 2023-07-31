@@ -1,7 +1,26 @@
 import NavBar from "./Navbar";
 import "../Style.css";
+import React, { useEffect , useState } from "react";
+
+
+
+
 
 function App() {
+
+  const [classes, setClasses] = useState(null);
+
+useEffect (() => {
+  const fetchClasses = async () => {
+    const response = await fetch('../classes');
+    const data = await response.json();
+    setClasses(data);
+    console.log(data);
+  }
+  fetchClasses();
+}, []);
+
+
   return (
     <>
     <NavBar />

@@ -3,8 +3,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
 import Courses from "./components/Courses";
-import Admin_courses from "./components/Admin_courses";
-import Admin_users from "./components/Admin_users";
+import Admin_courses from "./components/admin_courses";
+import Admin_users from "./components/admin_users";
 
 const AppRoutes = () => (
   <Routes>
