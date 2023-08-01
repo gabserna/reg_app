@@ -8,7 +8,8 @@ const client = new Client({
     port: process.env.PGPORT,
     password: process.env.PGPASSWORD,
     database: process.env.PGDATABASE,
-    ssl: true
+    ssl: true,
+    dialect: "postgres"
 });
 
 module.exports = client
