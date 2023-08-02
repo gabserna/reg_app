@@ -10,6 +10,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const { cli } = require("winston/lib/winston/config/index.js");
 
+
+
 app.use(bodyParser.json());
 
 // Have Node serve the files for our built React app
@@ -34,6 +36,11 @@ app.get("/classes", (req, res) => {
 app.get("/", (req, res) => {
   res.json({ message: "hello from the server" });
 });
+
+
+// routes
+require('./routes/auth.routes.js')(app);
+require('./routes/user.routes.js')(app);
 
 
 app.listen(PORT, () => {
@@ -67,5 +74,7 @@ function initial() {
     name: "admin"
   });
 }
+
+
 
 
