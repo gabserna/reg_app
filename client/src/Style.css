@@ -98,10 +98,10 @@ table, th, td {
   }
 }
 .loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #383636; /* Black */
+  width: 30px;
+  height: 30px;
+  border: 10px solid #f2f2f2; /* Light grey */
+  border-top: 10px solid #333; /* Black */
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }

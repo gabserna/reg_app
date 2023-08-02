@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Style.css";
 import { Link } from "react-router-dom";
-import NavBar from "./Navbar";
+//import NavBar from "./Navbar";
 import LoadingSpinner from "./spinner"
 
 function Login() {
@@ -64,8 +64,8 @@ function Login() {
             show
           </label><br />
           <button type="submit" data-provider="google">
-          <span class="datt" data-provider="google"></span>
-          <span class="cba09aff6">Continue with Google</span>
+          <span className="datt" data-provider="google"></span>
+          <span className="cba09aff6">Continue with Google</span>
           </button>
           {/* <a href="/">Continue with Google</a> */}
         </form>
