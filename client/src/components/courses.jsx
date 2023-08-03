@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import NavBar from "./Navbar";
+
 import "../Style.css";
 
 function Courses() {
   const [classesData, setClassesData] = useState([]);
 
   useEffect(() => {
-    fetch("./classes")    //how to call from server port 3001 ??
+    fetch("./classes") //how to call json file from server on port 3001??
+    //working just from local file
       .then((response) => response.json())
       .then((data) => setClassesData(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -17,7 +18,18 @@ function Courses() {
       <div className="main">
         <h1 id="login-header">Courses</h1>
         <table>
-
+          <thead>
+            <tr>
+              <th className="bold-header">Course ID</th>
+              <th className="bold-header">Course Title</th>
+              <th className="bold-header">Course Description</th>
+              <th className="bold-header">Classroom Number</th>
+              <th className="bold-header">Capacity</th>
+              <th className="bold-header">Credit Hours</th>
+              <th className="bold-header">Tuition Cost</th>
+              <th className="bold-header">Actions</th>
+            </tr>
+          </thead>
           <tbody>
             {classesData.map((classItem, index) => (
               <tr key={index}>
@@ -40,5 +52,4 @@ function Courses() {
     </>
   );
 }
-
 export default Courses;
