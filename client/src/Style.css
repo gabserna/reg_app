@@ -18,6 +18,10 @@ body {
   color-scheme: light dark;
 }
 
+button {
+  cursor: pointer;
+}
+
 .dark-mode {
   background-color: #263238;
   color: #cfd8dc;
@@ -33,11 +37,22 @@ h1 {
   font-size: 2em;
   line-height: 1;
 }
-
+/*table section*/
 table, th, td {
   border: 1px solid white;
   border-collapse: collapse;
 }
+
+table {
+  margin: 1em;
+}
+td {
+  padding: 0.5em;
+}
+#course_description {
+  text-align: justify;
+}
+/*end table section*/
 
 .registry {
   width: 25%;
@@ -73,7 +88,6 @@ table, th, td {
 .navbar a.active {
   font-weight: bold;
 }
-
 
 
 
