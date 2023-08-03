@@ -1,31 +1,21 @@
 //import NavBar from "./Navbar";
 import "../Style.css";
 
-function App() {
+function Registry() {
   return (
     <>
       <div className="registry">
         <h1 id="login-header">User Registration</h1>
-
-        <label htmlFor="userName">User Name: </label>
-        <input type="text" name="userName" id="userName" /><br />
-
-        <label htmlFor="firstName">First Name: </label>
-        <input type="text" name="firstName" id="firstName" /><br />
-
-        <label htmlFor="lastName">Last Name: </label>
-        <input type="text" name="lastName" id="lastName" /><br />
-
-        <label htmlFor="email">Email: </label>
-        <input type="text" name="email" id="email" /><br />
-
-        <label htmlFor="address">Address: </label>
-        <input type="text" name="address" id="address" /><br />
-        
-        <button type="submit">SAVE</button>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" />
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+        <input type="text" name="email" id="email" placeholder="Email" />
+        <input type="text" name="address" id="address" placeholder="Address" />
+        <input type="text" name="userName" id="userName" placeholder="User Name" />
+        <input type="text" name="password" id="password" placeholder="Password" />
+        <button type="submit">Submit</button>
       </div>
     </>
   );
 }
 
-export default App;
+export default Registry;

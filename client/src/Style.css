@@ -64,6 +64,10 @@ td {
 
 .registry input {
   width: 100%;
+  margin-bottom: 1em;
+}
+.registry label {
+  display: flex;
 }
 
 .navbar {
