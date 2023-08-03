@@ -14,6 +14,9 @@ function darkMode() {
   document.body.classList.toggle("dark-mode", newDarkMode);
 }
 
+
+// should we add hamburger menu on responsive design?
+
 function NavBar() {
   return (
     <>
