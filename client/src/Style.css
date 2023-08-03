@@ -69,7 +69,9 @@ td {
 .registry label {
   display: flex;
 }
-
+.invalid{
+  border:1px solid #ff0000
+  }
 .navbar {
   background-color: #f2f2f2;
   padding: 3px 0 3px 0;
