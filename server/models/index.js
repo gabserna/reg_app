@@ -1,36 +1,36 @@
-const config = require("../config/db.config.js");
+// const config = require("../config/db.config.js");
 
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
-  config.DB,
-  config.USER,
-  config.PASSWORD,
-  {
-    host: config.HOST,
-    dialect: config.dialect,
-    dialectOptions: {
-      ssl: {
-        require: true
-      }
-    }
-  }
-);
+// const Sequelize = require("sequelize");
+// const sequelize = new Sequelize(
+//   config.DB,
+//   config.USER,
+//   config.PASSWORD,
+//   {
+//     host: config.HOST,
+//     dialect: config.dialect,
+//     dialectOptions: {
+//       ssl: {
+//         require: true
+//       }
+//     }
+//   }
+// );
 
-const db = {};
+// const db = {};
 
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
+// db.Sequelize = Sequelize;
+// db.sequelize = sequelize;
 
-db.user = require("../models/user.model.js")(sequelize, Sequelize);
-db.role = require("../models/role.model.js")(sequelize, Sequelize);
+// db.user = require("../models/user.model.js")(sequelize, Sequelize);
+// db.role = require("../models/role.model.js")(sequelize, Sequelize);
 
-db.role.belongsToMany(db.user, {
-  through: "user_roles"
-});
-db.user.belongsToMany(db.role, {
-  through: "user_roles"
-});
+// db.role.belongsToMany(db.user, {
+//   through: "user_roles"
+// });
+// db.user.belongsToMany(db.role, {
+//   through: "user_roles"
+// });
 
-db.ROLES = ["user", "admin", "moderator"];
+// db.ROLES = ["user", "admin", "moderator"];
 
-module.exports = db;
+// module.exports = db;

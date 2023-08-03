@@ -37,10 +37,27 @@ app.get("/", (req, res) => {
   res.json({ message: "hello from the server" });
 });
 
+app.post("/signup", (req, res) => {
+  client.query(`INSERT INTO users (
+    username, 
+    email, 
+    password
+  VALUES (
+    '${req.body.name}', 
+    '${req.body.email}', 
+    '${req.body.password})`, 
+  (err, result)=>{
+      if(!err){
+        res.json('User added successfully');
+      }
+    });
+  client.end;
+});
+
 
 // routes
-require('./routes/auth.routes.js')(app);
-require('./routes/user.routes.js')(app);
+// require('./routes/auth.routes.js')(app);
+// require('./routes/user.routes.js')(app);
 
 
 app.listen(PORT, () => {
@@ -52,10 +69,10 @@ client.connect();
 const db = require("./models");
 const Role = db.role;
 
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync Db');
-  initial();
-});
+// db.sequelize.sync({force: true}).then(() => {
+//   console.log('Drop and Resync Db');
+//   initial();
+// });
 
 
 function initial() {

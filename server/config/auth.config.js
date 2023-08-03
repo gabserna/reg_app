@@ -1,3 +1,3 @@
-module.exports = {
-    secret: "regapp-secret-key"
-  };
+// module.exports = {
+//     secret: "regapp-secret-key"
+//   };
