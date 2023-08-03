@@ -4,3 +4,4 @@
 - npm run dev
 - npm i web-vitals
 - npm i react-scripts
+npm i jsonwebtoken

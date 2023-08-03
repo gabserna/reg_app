@@ -1,10 +1,8 @@
-import NavBar from "./Navbar";
 import "../Style.css";
 
 function App() {
   return (
     <>
-    <NavBar />
       <div className="main">
         <h1 id="login-header">Admin Courses Details</h1>
 
