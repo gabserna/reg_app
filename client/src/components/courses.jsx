@@ -6,8 +6,7 @@ function Courses() {
   const [classesData, setClassesData] = useState([]);
 
   useEffect(() => {
-    fetch("./classes") //how to call json file from server on port 3001??
-    //working just from local file
+    fetch("./classes")
       .then((response) => response.json())
       .then((data) => setClassesData(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -18,7 +17,7 @@ function Courses() {
       <div className="main">
         <h1 id="login-header">Courses</h1>
         <table>
-          <thead>
+{/*           <thead>
             <tr>
               <th className="bold-header">Course ID</th>
               <th className="bold-header">Course Title</th>
@@ -29,7 +28,7 @@ function Courses() {
               <th className="bold-header">Tuition Cost</th>
               <th className="bold-header">Actions</th>
             </tr>
-          </thead>
+          </thead> */}
           <tbody>
             {classesData.map((classItem, index) => (
               <tr key={index}>
