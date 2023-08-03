@@ -8,7 +8,7 @@
 
 body {
   margin: 0 auto;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   color: #263238;
   background-color: #cfd8dc;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -74,12 +74,13 @@ td {
   }
 .navbar {
   background-color: #f2f2f2;
-  padding: 3px 0 3px 0;
+  padding: 1px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
+  justify-content: space-around;
 }
 
 .navbar li {

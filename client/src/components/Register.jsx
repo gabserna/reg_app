@@ -26,7 +26,7 @@ function Registry() {
   function onSubmit(e) {
     e.preventDefault();
 
-    // Example: Check if the first name is empty
+    //Check if the first name is empty
     if (!firstName) {
       setInputClass((prevInputClass) => ({
         ...prevInputClass,
@@ -38,9 +38,7 @@ function Registry() {
         firstName: "",
       }));
     }
-
     // Add further validation logic for other fields here
-
     // If all validations pass, you can proceed with form submission
   }
 
