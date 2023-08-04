@@ -7,9 +7,7 @@ function App() {
       <div className="main">
         <h1 id="login-header">admin page</h1>
         
-        <h2>WHICH INFO GOES HERE????</h2>
-
-        <p>should add hamburger menu?</p>
+        <h2>***here goes some instructions to admin user***</h2>
 
         <table>
           <thead>

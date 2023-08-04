@@ -8,7 +8,7 @@
 
 body {
   margin: 0 auto;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   color: #263238;
   background-color: #cfd8dc;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,6 +16,10 @@ body {
   min-width: 320px;
   min-height: 80vh;
   color-scheme: light dark;
+}
+
+button {
+  cursor: pointer;
 }
 
 .dark-mode {
@@ -33,11 +37,22 @@ h1 {
   font-size: 2em;
   line-height: 1;
 }
-
+/*table section*/
 table, th, td {
   border: 1px solid white;
   border-collapse: collapse;
 }
+
+table {
+  margin: 1em;
+}
+td {
+  padding: 0.5em;
+}
+#course_description {
+  text-align: justify;
+}
+/*end table section*/
 
 .registry {
   width: 25%;
@@ -49,16 +64,23 @@ table, th, td {
 
 .registry input {
   width: 100%;
+  margin-bottom: 1em;
 }
-
+.registry label {
+  display: flex;
+}
+.invalid{
+  border:1px solid #ff0000
+  }
 .navbar {
   background-color: #f2f2f2;
-  padding: 3px 0 3px 0;
+  padding: 1px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
+  justify-content: space-around;
 }
 
 .navbar li {
@@ -73,7 +95,6 @@ table, th, td {
 .navbar a.active {
   font-weight: bold;
 }
-
 
 
 

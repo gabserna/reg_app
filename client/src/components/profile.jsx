@@ -9,8 +9,8 @@ function App() {
         <table>
           <thead>
             <th>UserName</th>
-            <th>Last Name</th>
             <th>First Name</th>
+            <th>Last Name</th>
             <th>Phone</th>
             <th>Email</th>
             <th>Address</th>

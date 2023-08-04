@@ -6,7 +6,7 @@ function App() {
       <div className="main">
         <h1 id="login-header">Admin Courses Details</h1>
 
-        <h2>WHICH INFO GOES HERE????</h2>
+        <h2>***here goes some instructions to admin user***</h2>
 
         <table>
           <thead>

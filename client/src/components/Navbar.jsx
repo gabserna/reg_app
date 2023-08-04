@@ -8,18 +8,14 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons'
 function darkMode() {
   // Get the current state of dark mode from localStorage (if any)
   const isDarkMode = localStorage.getItem("darkMode") === "true";
-
-  // Toggle the dark mode
+  // Toggle to dark mode
   const newDarkMode = !isDarkMode;
-
-  // Save the new dark mode state to localStorage
   localStorage.setItem("darkMode", newDarkMode);
-
-  // Update the class of the document.body based on the new dark mode state
   document.body.classList.toggle("dark-mode", newDarkMode);
 }
 
 
+// should we add hamburger menu on responsive design?
 
 function NavBar() {
   return (
@@ -43,7 +39,7 @@ function NavBar() {
           </li>
           <li>
             <NavLink to="/courses" activeClassName="active">
-              Courses
+              Classes
             </NavLink>
           </li>
           <li>
