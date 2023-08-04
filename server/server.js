@@ -37,23 +37,19 @@ app.get("/", (req, res) => {
   res.json({ message: "hello from the server" });
 });
 
-app.post("/signup", (req, res) => {
-  client.query(`INSERT INTO users (
-    username, 
-    email, 
-    password
-  VALUES (
-    '${req.body.name}', 
-    '${req.body.email}', 
-    '${req.body.password})`, 
-  (err, result)=>{
-      if(!err){
-        res.json('User added successfully');
-      }
-    });
-  client.end;
-});
+app.post('/users', (req, res)=> {
+  const user = req.body;
+  let insertQuery = `insert into users(username, email, password) 
+    values('${user.username}', '${user.email}', '${user.password}')`
 
+  client.query(insertQuery, (err, result)=>{
+      if(!err){
+          res.send('Insertion was successful')
+      }
+      else{ console.log(err.message) }
+  })
+  client.end;
+})
 
 // routes
 // require('./routes/auth.routes.js')(app);
