@@ -5,3 +5,5 @@
 - npm i web-vitals
 - npm i react-scripts
 npm i jsonwebtoken
+
+npm install --save @fortawesome/free-solid-svg-icons

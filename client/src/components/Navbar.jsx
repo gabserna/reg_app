@@ -1,23 +1,25 @@
-//import React from "react";
+import React, { useState } from "react"; // Importa useState aquí
 import { NavLink } from "react-router-dom";
 import "../Style.css";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function darkMode() {
-  // Get the current state of dark mode from localStorage (if any)
   const isDarkMode = localStorage.getItem("darkMode") === "true";
-  // Toggle to dark mode
   const newDarkMode = !isDarkMode;
   localStorage.setItem("darkMode", newDarkMode);
   document.body.classList.toggle("dark-mode", newDarkMode);
 }
 
-
-// should we add hamburger menu on responsive design?
-
 function NavBar() {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  const toggleDarkMode = () => {
+    darkMode();
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <>
       <nav className="navbar">
@@ -53,13 +55,12 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
-            {/* Use onClick to call the darkMode function */}
             <button
               id="darkModeButton"
-              onClick={darkMode}
+              onClick={toggleDarkMode}
               aria-label="Toggle dark mode"
             >
-              <FontAwesomeIcon icon={faMoon} />
+              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
             </button>
           </li>
         </ul>

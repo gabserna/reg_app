@@ -78,6 +78,7 @@ td {
 }
 
 .navbar ul {
+  color: #ff0000;
   list-style: none;
   display: flex;
   justify-content: space-around;
