@@ -25,10 +25,9 @@ function Login() {
     <>
       <LoadingSpinner />
       <div className="main">
-        <h2>Welcome!</h2>
-        <h5>Login with your user credentials</h5>
-
-        <form id="login-form" onSubmit={handleSubmit}>
+        <h1>Welcome!</h1>
+        <h3>Login with your user credentials</h3>
+        <form className="loginForm" onSubmit={handleSubmit}>
           <input
             type="text"
             name="username"
@@ -55,9 +54,9 @@ function Login() {
               />
             </button>
           </div>
-          <input type="submit" id="login-form-submit" />
         </form>
-        <label>
+          <input type="submit" id="login-form-submit" />
+        <label id="regNew">
           New here? Click: <Link to="/register">Register</Link>
         </label>
       </div>

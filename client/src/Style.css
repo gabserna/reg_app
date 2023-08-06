@@ -57,7 +57,7 @@ td {
 .registry {
   width: 25%;
   margin: 0 auto;
-  border: 1px solid #656565;
+  /* border: 1px solid #656565; */
   border-radius: 10px;
   padding: 2em;
 }
@@ -102,12 +102,16 @@ td {
   margin-bottom: 1em;
 }
 
+.loginForm input {
+  width: auto;
+}
 #userLogin {
-  width: 25vw;
+  width: 95%;
 }
-#userPwd {
-  width: 22vw;
+#regNew {
+  margin-top: 2rem;
 }
+
 
 
 
