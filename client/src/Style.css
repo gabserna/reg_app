@@ -96,6 +96,18 @@ td {
   font-weight: bold;
 }
 
+.registry input {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#userLogin {
+  width: 25vw;
+}
+#userPwd {
+  width: 22vw;
+}
+
 
 
 @media (prefers-color-scheme: light) {
