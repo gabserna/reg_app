@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/GlobalStyles.css";
+import "../Style.css";
 
 function Courses() {
   const [classesData, setClassesData] = useState([]);

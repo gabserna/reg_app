@@ -1,5 +1,5 @@
 //import React, { useState } from "react";
-import "../Style.css";
+import "../styles/GlobalStyles.css";
 
 //import NavBar from "./Navbar";
 

@@ -1,11 +1,11 @@
 //import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import withSpinner from './components/spinner'; // Importa el HOC
-import Login from './components/Login';
-import Registration from './components/Registration';
-import UserProfile from './components/UserProfile';
-import Courses from './components/courses';
-import AdminDashboard from './components/AdminDashboard';
+import withSpinner from '../components/spinner'; // Importa el HOC
+import Login from '../components/Login';
+import Registration from '../components/Registration';
+import UserProfile from '../components/UserProfile';
+import Courses from '../components/courses';
+import AdminDashboard from '../components/AdminDashboard';
 
 
 const AppRoutes = () => (

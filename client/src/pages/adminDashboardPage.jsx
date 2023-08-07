@@ -1,4 +1,4 @@
-import "../styles/GlobalStyles.css";
+import "../Style.css";
 
 function adminDashboard() {
   return (

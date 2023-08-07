@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LoadingSpinner from "./spinner"; // Mantengo esto asumiendo que se usa en otro lugar del componente o proyecto
 import "font-awesome/css/font-awesome.min.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/GlobalStyles.css";
+import "../Style.css";
 
 function Login() {
   const [username, setUsername] = useState("");
