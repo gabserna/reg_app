@@ -1,10 +1,10 @@
 import "../Style.css";
 
-function App() {
+function adminDashboard() {
   return (
     <>
       <div className="main">
-        <h1 id="login-header">Admin Courses Details</h1>
+        <h1 id="login-header">Admin Dashboard</h1>
 
         <h2>***here goes some instructions to admin user***</h2>
 
@@ -40,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default adminDashboard;

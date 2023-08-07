@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Importa useState aquí
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../Style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,13 +30,18 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/register" activeClassName="active">
-              Register
+            <NavLink to="/registration" activeClassName="active">
+              Registration
             </NavLink>
           </li>
           <li>
-            <NavLink to="/profile" activeClassName="active">
-              Profile
+            <NavLink to="/userProfile" activeClassName="active">
+              User Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/courseFilter" activeClassName="active">
+              Course Filter
             </NavLink>
           </li>
           <li>
@@ -45,13 +50,8 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/admin_courses" activeClassName="active">
-              Admin Courses
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin_users" activeClassName="active">
-              Admin Users
+            <NavLink to="/adminDashboard" activeClassName="active">
+              AdminDashboard
             </NavLink>
           </li>
           <li>

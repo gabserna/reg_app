@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "./spinner"; // Mantengo esto asumiendo que se usa en otro lugar del componente o proyecto
 import "font-awesome/css/font-awesome.min.css";
@@ -9,7 +9,6 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false); // Combine `showPassword` y `passwordShown` en una sola variable
-  const [isLoading, setIsLoading] = useState(false);
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -54,8 +53,8 @@ function Login() {
               />
             </button>
           </div>
-        </form>
           <input type="submit" id="login-form-submit" />
+        </form>
         <label id="regNew">
           New here? Click: <Link to="/register">Register</Link>
         </label>

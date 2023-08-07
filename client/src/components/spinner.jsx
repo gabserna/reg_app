@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BeatLoader } from "react-spinners";
 
 const withSpinner = (WrappedComponent) => {
@@ -6,7 +6,6 @@ const withSpinner = (WrappedComponent) => {
     const [loading, setLoading] = useState(false);
     const color = "#e63946";
     const override = {
-      margin: "2rem",
       display: "block",
       margin: "0 auto",
     };

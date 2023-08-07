@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../Style.css";
 
-function Registry() {
-  const [showPassword, setShowPassword] = useState(false);
+function Registration() { // Cambia el nombre de la función a "Registration"
+  const [showPassword] = useState(false);
   const [inputClass, setInputClass] = useState({
     firstName: "",
     email: "",
@@ -27,7 +27,7 @@ function Registry() {
     e.preventDefault();
 
     //Check if the first name is empty
-    if (!firstName) {
+    if (!inputClass.firstName) { // Cambia "firstName" a "inputClass.firstName"
       setInputClass((prevInputClass) => ({
         ...prevInputClass,
         firstName: "invalid",
@@ -93,4 +93,4 @@ function Registry() {
   );
 }
 
-export default Registry;
+export default Registration; // Cambia el nombre de la exportación a "Registration"
