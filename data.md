@@ -5,6 +5,14 @@
 - npm run dev
 - npm i react-scripts
 - npm i jsonwebtoken
+npm install --save path
+npm install express-openid-connect
+npm install body-parser
+npm install bcrypt
+npm install pg-hstore
+npm install sequelize sqlite3
+npm install winston
+npm install morgan --save
 
 
 # client side:
