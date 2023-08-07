@@ -1,4 +1,5 @@
 const client = require("./config/connection.js");
+const config = require("./config/auth0connection.js");
 const express = require("express");
 const path = require("path");
 const { auth } = require('express-openid-connect');
@@ -24,6 +25,14 @@ app.use(express.json())
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// auth0 configuration
+app.use(auth(config));
+
+app.get('/', (req, res) => {
+  console.log(req.oidc.isAuthenticated());
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
+
 // Handle GET requests to /api route
 app.get("/classes", (req, res) => {
   client.query(`Select * from class_info`, (err, result)=>{
@@ -32,10 +41,6 @@ app.get("/classes", (req, res) => {
     }
   });
   client.end;
-});
-
-app.get("/", (req, res) => {
-  res.json({ message: "hello from the server" });
 });
 
 app.post('/users', (req, res)=> {
@@ -53,11 +58,14 @@ app.post('/users', (req, res)=> {
 })
 
 
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
 
 client.connect();
+
+
 
 
 
