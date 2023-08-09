@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LoadingSpinner from "./spinner"; // Mantengo esto asumiendo que se usa en otro lugar del componente o proyecto
+import LoadingSpinner from "../components/spinner";
 import "font-awesome/css/font-awesome.min.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import "../Style.css";
+import "../styles/GlobalStyles.css";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -56,7 +56,7 @@ function Login() {
           <input type="submit" id="login-form-submit" />
         </form>
         <label id="regNew">
-          New here? Click: <Link to="/register">Register</Link>
+          New here? Click: <Link to="/registration">Register</Link>
         </label>
       </div>
     </>
