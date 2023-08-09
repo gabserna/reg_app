@@ -1,8 +1,11 @@
 const client = require("./config/connection.js");
-const config = require("./config/auth0connection.js");
 const express = require("express");
 const path = require("path");
-const { auth } = require('express-openid-connect');
+const jwt = require("jsonwebtoken");
+const localstorage = require("local-storage");
+const fakelocal = require("./fakelocal.json");
+const fs = require("fs");
+
 
 
 const PORT = process.env.PORT || 3001;
@@ -25,9 +28,6 @@ app.use(express.json())
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// auth0 configuration
-app.use(auth(config));
-
 app.get('/', (req, res) => {
   console.log(req.oidc.isAuthenticated());
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
@@ -43,16 +43,59 @@ app.get("/classes", (req, res) => {
   client.end;
 });
 
-app.post('/users', (req, res)=> {
+app.post('/signup', async (req, res)=> {
   const user = req.body;
-  let insertQuery = `insert into users(username, email, password) 
-    values('${user.username}', '${user.email}', '${user.password}')`
+  const createdat = new Date( Date.now() ).toISOString().slice(0, 19).replace('T', ' ');
+  const isadmin = false;
+  const token = jwt.sign({user: user}, 'secretkey')
+
+  localstorage.set('token', token);
+  console.log(localstorage.get('token'));
+
+  user.hash = token;
+  user.createdat = createdat;
+  user.isadmin = isadmin;
+  let insertQuery = `insert into users(
+      username, 
+      email, 
+      password,
+      createdat,
+      isadmin,
+      firstName,
+      lastName,
+      telephone,
+      address,
+      hash) 
+    values(
+      '${user.username}', 
+      '${user.email}', 
+      '${user.password}',
+      '${user.createdat}',
+      '${user.isadmin}',
+      '${user.firstName}',
+      '${user.lastName}',
+      '${user.telephone}',
+      '${user.address}',
+      '${user.hash}')`
 
   client.query(insertQuery, (err, result)=>{
       if(!err){
           res.send('Insertion was successful')
       }
       else{ console.log(err.message) }
+  })
+  client.end;
+})
+
+app.get('/profile', (req, res)=> {
+  const token = localstorage.get('token');
+
+  client.query(`select * from users where hash = '${token}'`, (err, result)=>{
+  
+    if(!err){
+      res.send(result.rows);
+    }
+    else{ console.log(err.message) }
   })
   client.end;
 })
