@@ -16,18 +16,7 @@ function Courses() {
       <div className="main">
         <h1 id="login-header">Classes</h1>
         <table>
-{/*      <thead>
-            <tr>
-              <th className="bold-header">Course ID</th>
-              <th className="bold-header">Course Title</th>
-              <th className="bold-header">Course Description</th>
-              <th className="bold-header">Classroom Number</th>
-              <th className="bold-header">Capacity</th>
-              <th className="bold-header">Credit Hours</th>
-              <th className="bold-header">Tuition Cost</th>
-              <th className="bold-header">Actions</th>
-            </tr>
-          </thead> */}
+
           <tbody>
             {classesData.map((classItem, index) => (
               <tr key={index}>

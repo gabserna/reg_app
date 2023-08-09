@@ -25,33 +25,28 @@ function NavBar() {
       <nav className="navbar">
         <ul>
           <li>
-            <NavLink exact to="/login" activeClassName="active">
+            <NavLink exact to="/login" activeclassname="active">
               Login
             </NavLink>
           </li>
           <li>
-            <NavLink to="/registration" activeClassName="active">
+            <NavLink to="/registration" activeclassname="active">
               Registration
             </NavLink>
           </li>
           <li>
-            <NavLink to="/userProfile" activeClassName="active">
-              User Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/courseFilter" activeClassName="active">
-              Course Filter
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/courses" activeClassName="active">
+            <NavLink to="/courses" activeclassname="active">
               Classes
             </NavLink>
           </li>
           <li>
-            <NavLink to="/adminDashboard" activeClassName="active">
-              AdminDashboard
+            <NavLink to="/userProfile" activeclassname="active">
+              MyProfile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/adminDashboard" activeclassname="active">
+              Dashboard
             </NavLink>
           </li>
           <li>

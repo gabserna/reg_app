@@ -56,7 +56,7 @@ function Login() {
           <input type="submit" id="login-form-submit" />
         </form>
         <label id="regNew">
-          New here? Click: <Link to="/register">Register</Link>
+          New here? Click: <Link to="/registration">Register</Link>
         </label>
       </div>
     </>

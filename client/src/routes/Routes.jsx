@@ -1,4 +1,3 @@
-//import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import withSpinner from '../components/spinner'; // Importa el HOC
 import Login from '../components/Login';
@@ -15,9 +14,6 @@ const AppRoutes = () => (
     <Route path="/userProfile" element={<UserProfileWithSpinner />} />
     <Route path="/courses" element={<CoursesWithSpinner />} />
     <Route path="/adminDashboard" element={<AdminDashboardWithSpinner />} />
-    
-    
-    
   </Routes>
 );
 
