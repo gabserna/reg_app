@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/GlobalStyles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 function darkMode() {
   const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -26,7 +26,7 @@ function NavBar() {
         <ul>
           <li>
             <NavLink exact to="/" activeclassname="active">
-              Home
+            <FontAwesomeIcon icon={faHouse} />
             </NavLink>
           </li>
           <li>
