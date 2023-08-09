@@ -1,4 +1,3 @@
-import React from 'react';
 import "../styles/GlobalStyles.css";
 
 const mtechImage = '../public/mtech_building.png';

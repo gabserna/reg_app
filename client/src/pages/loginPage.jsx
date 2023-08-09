@@ -24,8 +24,8 @@ function Login() {
     <>
       <LoadingSpinner />
       <div className="main">
-        <h1>Let's get in</h1>
-        <h3>Login with your user credentials</h3>
+        <h1>Account access:</h1>
+        <h3>use your credentials</h3>
         <form className="loginForm" onSubmit={handleSubmit}>
           <input
             type="text"

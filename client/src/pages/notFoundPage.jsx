@@ -1,4 +1,3 @@
-import React from 'react';
 import "../styles/GlobalStyles.css";
 
 const notFound = '../public/404.png';
@@ -7,7 +6,7 @@ function NotFoundPage() {
     <div>
       <h1>404 - Not Found</h1>
       <p>The page you're looking for doesn't exist.</p>
-      <img id="notfound404" src={notFound} alt="" srcset="" />
+      <img id="notfound404" src={notFound} alt="" />
     </div>
   );
 }
