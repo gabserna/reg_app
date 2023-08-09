@@ -1,6 +1,6 @@
 import "../styles/GlobalStyles.css";
 
-const notFound = '../public/404.png';
+const notFound = '../404.png';
 function NotFoundPage() {
   return (
     <div>

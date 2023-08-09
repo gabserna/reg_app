@@ -1,6 +1,6 @@
 import "../styles/GlobalStyles.css";
 
-const mtechImage = '../public/mtech_building.png';
+const mtechImage = '../mtech_building.png';
 function Home() {
   return (
     <div>
