@@ -25,6 +25,11 @@ function NavBar() {
       <nav className="navbar">
         <ul>
           <li>
+            <NavLink exact to="/" activeclassname="active">
+              Home
+            </NavLink>
+          </li>
+          <li>
             <NavLink exact to="/login" activeclassname="active">
               Login
             </NavLink>
