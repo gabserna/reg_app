@@ -1,39 +1,24 @@
-//import NavBar from "./Navbar";
-import "../styles/GlobalStyles.css";
+import { useHistory } from 'react-router-dom';
+import { logout } from '../utils/auth';
 
-function App() {
+function UserProfile() {
+  const history = useHistory();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      history.push('/loginPage');
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  };
+
   return (
-    <>
-      <div className="main">
-        <h1 id="login-header">User Profile</h1>
-        <table>
-          <thead>
-            <th>UserName</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Courses</th>
-            <th>Actions</th>
-          </thead>
-          <tbody>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <button>Edit</button>
-              <button>Save</button>
-            </td>
-          </tbody>
-        </table>
-      </div>
-    </>
+    <div>
+      <h2>My Profile</h2>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
   );
 }
 
-export default App;
+export default UserProfile;

@@ -1,7 +1,6 @@
-//import NavBar from "./Navbar";
-import "../Style.css";
+import "../styles/GlobalStyles.css";
 
-function App() {
+function UserProfile() {
   return (
     <>
       <div className="main">
@@ -36,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserProfile;

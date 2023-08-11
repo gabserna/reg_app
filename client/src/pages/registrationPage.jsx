@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Style.css";
+import "../styles/GlobalStyles.css";
 
 function Registration() { // Cambia el nombre de la función a "Registration"
   const [showPassword] = useState(false);

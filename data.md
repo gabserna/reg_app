@@ -5,15 +5,13 @@
 - npm run dev
 - npm i react-scripts
 - npm i jsonwebtoken
-npm install --save path
-npm install express-openid-connect
-npm install body-parser
-npm install bcrypt
-npm install pg-hstore
-npm install sequelize sqlite3
-npm install winston
-npm install morgan --save
-
+- npm i --save path
+- npm i body-parser
+- npm i bcrypt
+- npm i pg-hstore
+- npm i winston
+- npm i morgan --save
+- npm i local-storage --save
 
 # client side:
 - npm i web-vitals

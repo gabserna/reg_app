@@ -111,7 +111,15 @@ td {
   margin-top: 2rem;
 }
 
+#notfound404 {
+  width: 500px;
+  margin-bottom: 2rem;
+}
 
+#home_img {
+  width: 75%;
+  margin-bottom: 2rem;
+}
 
 
 @media (prefers-color-scheme: light) {
