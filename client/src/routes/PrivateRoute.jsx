@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types'; // Importa PropTypes
+import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from '../context/AuthFunctions';
 
 function PrivateRoute({ component: Component, ...rest }) {
-  const { isAuthenticated } = useAuth(); // Usa el hook useAuth para obtener el estado de autenticación
+  // Usa el hook useAuth para obtener el estado de autenticación
+  const { isAuthenticated } = useAuth();
 
   return (
     <Route
@@ -17,6 +18,7 @@ function PrivateRoute({ component: Component, ...rest }) {
 
 // Agrega validación de tipos usando PropTypes
 PrivateRoute.propTypes = {
-  component: PropTypes.elementType.isRequired, // Validación para asegurarte de que component es un elemento React
+  // Validación para asegurarte de que component es un elemento React
+  component: PropTypes.elementType.isRequired,
 };
 export default PrivateRoute;

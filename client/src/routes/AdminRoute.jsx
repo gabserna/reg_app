@@ -1,6 +1,6 @@
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from '../context/AuthFunctions';
 
 function AdminRoute({ component: Component, ...rest }) {
   const { isAuthenticated, userRoles } = useAuth();
