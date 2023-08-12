@@ -7,7 +7,7 @@
     "node": "20.1.0"
   },
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "node --watch server.js",
     "build": "cd server && npm i && cd ../client && npm i && npm run build",
     "start": "node server/server.js",
     "lint": "eslint **/*.js --fix"
@@ -28,16 +28,14 @@
     "local-storage": "^2.0.0",
     "morgan": "^1.10.0",
     "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pg": "^8.11.2",
     "pg-hstore": "^2.3.4",
-<<<<<<< HEAD
     "sequelize": "^6.32.1",
     "sqlite3": "^5.1.6",
     "view": "^0.6.1",
-=======
->>>>>>> 066e5fbb0ae843b7ebf0f26ff54a151b8419c191
     "winston": "^3.10.0"
   },
   "devDependencies": {
