@@ -24,6 +24,7 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.1",
+    "loader": "^2.1.1",
     "local": "^0.3.3",
     "local-storage": "^2.0.0",
     "morgan": "^1.10.0",
@@ -32,15 +33,15 @@
     "path": "^0.12.7",
     "pg": "^8.11.2",
     "pg-hstore": "^2.3.4",
-<<<<<<< HEAD
     "sequelize": "^6.32.1",
+    "server": "^1.0.0",
     "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0",
     "view": "^0.6.1",
-=======
->>>>>>> 066e5fbb0ae843b7ebf0f26ff54a151b8419c191
     "winston": "^3.10.0"
   },
   "devDependencies": {
-    "eslint": "^8.44.0"
+    "eslint": "^8.47.0",
+    "eslint-plugin-react": "^7.33.1"
   }
 }
