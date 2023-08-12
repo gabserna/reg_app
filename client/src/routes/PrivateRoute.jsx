@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+//import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from '../context/AuthFunctions';
 
 function PrivateRoute({ component: Component, ...rest }) {

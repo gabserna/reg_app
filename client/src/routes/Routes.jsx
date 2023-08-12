@@ -19,8 +19,8 @@ const AppRoutes = () => (
     <Route path="/courses" element={<CoursesWithSpinner />} />
     <Route path="/adminDashboard" element={<AdminDashboardWithSpinner />} />
     <Route path="*" element={<NotFoundPage />} />
-    <PrivateRoute path="/private" element={<UserProfilePageWithSpinner />} />
-    <AdminRoute path="/adminDashboard" element={<AdminDashboardWithSpinner />} />
+    {/* <PrivateRoute path="/private" element={<UserProfilePageWithSpinner />} />
+    <AdminRoute path="/adminDashboard" element={<AdminDashboardWithSpinner />} /> */}
   </Routes>
 );
 
