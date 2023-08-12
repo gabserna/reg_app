@@ -10,7 +10,7 @@ import withSpinner from '../components/spinner';
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/" element={<HomeWithSpinner />} />
     <Route path="/login" element={<LoginWithSpinner />} />
     <Route path="/registration" element={<RegistrationWithSpinner />} />
     <Route path="/UserProfile" element={<UserProfilePageWithSpinner />} />
@@ -21,6 +21,7 @@ const AppRoutes = () => (
 );
 
 // Wrapping each component with the withSpinner HOC
+const HomeWithSpinner = withSpinner(Home);
 const LoginWithSpinner = withSpinner(Login);
 const RegistrationWithSpinner = withSpinner(Registration);
 const UserProfilePageWithSpinner = withSpinner(UserProfile);
