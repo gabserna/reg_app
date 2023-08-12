@@ -18,3 +18,9 @@
 - npm install --save font-awesome
 - npm install --save @fortawesome/free-solid-svg-icons
 - npm install --save react-spinners
+
+
+after
+npm install
+npm ci
+(to install all dependencies with exact version needed)
