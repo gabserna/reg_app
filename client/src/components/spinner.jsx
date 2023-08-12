@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { BeatLoader } from "react-spinners";
+import { BarLoader } from "react-spinners";
 
 const withSpinner = (WrappedComponent) => {
   return function WithSpinnerComponent(props) {
     const [loading, setLoading] = useState(false);
-    const color = "#e63946";
+    const color = "#77001e";
     const override = {
-      display: "block",
       margin: "0 auto",
     };
 
@@ -14,19 +13,26 @@ const withSpinner = (WrappedComponent) => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 650);
     }, []);
 
     return (
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "30vh",
+        }}
+      >
         {loading ? (
-          <BeatLoader
+          <BarLoader
             color={color}
-            loading={loading}
+            loading={true}
             cssOverride={override}
-            size={20}
-            aria-label="Loading Spinner"
-            data-testid="loader"
+            speedMultiplier={1}
+            height={6}
+            width={500}
           />
         ) : (
           <WrappedComponent {...props} />
@@ -35,5 +41,4 @@ const withSpinner = (WrappedComponent) => {
     );
   };
 };
-
 export default withSpinner;
