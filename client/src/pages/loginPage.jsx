@@ -24,40 +24,38 @@ function Login() {
     <>
       <LoadingSpinner />
       <div className="main">
-        <h1>Account access:</h1>
-        <h3>use your credentials</h3>
         <form className="loginForm" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            id="userLogin"
-            className="login-form-field"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <br />
-          <div className="hidePasswd">
+          <h1>Access</h1>
+          <h3>with your credentials:</h3>
+          <div class="input-container">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div class="input-container">
             <input
               type={passwordShown ? "text" : "password"}
               name="password"
-              id="userPwd"
-              className="login-form-field"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={togglePassword}>
-              <i
-                className={`fa ${passwordShown ? "fa-eye" : "fa-eye-slash"}`}
-              />
+            <button class="password-toggle" onClick={togglePassword}>
+              <i class={`fa ${passwordShown ? "fa-eye" : "fa-eye-slash"}`} />
             </button>
           </div>
-          <input type="submit" id="login-form-submit" />
+
+          <button type="submit" id="loginSubmit">
+            Log in
+          </button>
+          <label id="regNew">
+            New here? Click: <Link to="/registration">Register</Link>
+          </label>
         </form>
-        <label id="regNew">
-          New here? Click: <Link to="/registration">Register</Link>
-        </label>
       </div>
     </>
   );
