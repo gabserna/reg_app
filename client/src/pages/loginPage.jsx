@@ -27,7 +27,7 @@ function Login() {
         <form className="loginForm" onSubmit={handleSubmit}>
           <h1>Access</h1>
           <h3>with your credentials:</h3>
-          <div class="input-container">
+          <div className="input-container">
             <input
               type="text"
               name="username"
@@ -36,7 +36,7 @@ function Login() {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div class="input-container">
+          <div className="input-container">
             <input
               type={passwordShown ? "text" : "password"}
               name="password"
@@ -44,8 +44,8 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button class="password-toggle" onClick={togglePassword}>
-              <i class={`fa ${passwordShown ? "fa-eye" : "fa-eye-slash"}`} />
+            <button className="password-toggle" onClick={togglePassword}>
+              <i className={`fa ${passwordShown ? "fa-eye" : "fa-eye-slash"}`} />
             </button>
           </div>
 
