@@ -1,7 +1,7 @@
 :root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  /* padding: 1rem; */
   text-align: center;
   background-color: #858585;
 }
@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  height: 80vh;
   min-width: 90%;
   margin: 0;
   /* background-color: #080710; */
@@ -30,12 +30,6 @@ body {
 
 button {
   cursor: pointer;
-}
-
-#loginSubmit {
-  cursor: pointer;
-  background-color: #77001e !important;
-  color: #cfd8dc !important;
 }
 
 form {
@@ -48,7 +42,7 @@ form {
   border: 2px solid #77001e;
   border-radius: 5px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 40px #77001e;
+  box-shadow: 0 0 10px #77001e;
   padding: 20px 35px;
 }
 form * {
@@ -57,15 +51,15 @@ form * {
   border: none;
 }
 
-#loginSubmit {
+#loginSubmit, #registerMe {
   margin-top: 50px;
   width: 100%;
-  background-color: #ffffff;
-  color: #080710;
-  padding: 15px 0;
+  background-color: #77001e;
+  color: #cfd8dc;
+  padding: 2vh;
   font-size: 18px;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -97,14 +91,6 @@ td {
 }
 /*end table section*/
 
-.registry {
-  width: 25%;
-  margin: 0 auto;
-  border: 2px solid #656565;
-  border-radius: 5px;
-  padding: 2em;
-}
-
 .invalid {
   border: 1px solid #ff0000;
 }
@@ -131,13 +117,37 @@ td {
 .navbar a.active {
   font-weight: bold;
 }
-
-.registry input {
-  width: 100%;
-  margin-bottom: 1em;
-}
-.registry label {
+.registry {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60vw;
+  background-color: transparent;
+  border: 2px solid #77001e;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #77001e;
+  padding: 20px 35px;
+}
+.registry h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.registry input {
+  width: 46%;
+  padding: 1vh;
+  margin-bottom: 0.5vh;
+  border: 1px solid #77001e;
+  border-radius: 4px;
+}
+.registry .button-container {
+  justify-content: center;
+  width: 100%;
+}
+.button-container button {
+  width: 40% !important;
 }
 
 input {
@@ -176,7 +186,6 @@ input::placeholder {
 
 #regNew {
   margin-top: 2rem;
-  text-decoration: none;
 }
 
 #notfound404 {
