@@ -2,7 +2,6 @@ import { useState } from "react";
 import "../styles/GlobalStyles.css";
 
 function Registration() {
-  // Cambia el nombre de la función a "Registration"
   const [showPassword] = useState(false);
   const [inputClass, setInputClass] = useState({
     firstName: "",
@@ -28,7 +27,6 @@ function Registration() {
 
     //Check if the first name is empty
     if (!inputClass.firstName) {
-      // Cambia "firstName" a "inputClass.firstName"
       setInputClass((prevInputClass) => ({
         ...prevInputClass,
         firstName: "invalid",
@@ -39,8 +37,8 @@ function Registration() {
         firstName: "",
       }));
     }
-    // Add further validation logic for other fields here
-    // If all validations pass, you can proceed with form submission
+    //neet to add validation logic for other fields
+    //if all validations pass, proceed with form submission
   }
 
   return (
@@ -98,4 +96,4 @@ function Registration() {
   );
 }
 
-export default Registration; // Cambia el nombre de la exportación a "Registration"
+export default Registration;
