@@ -7,8 +7,8 @@ import Courses from "../pages/coursesPage";
 import AdminDashboard from "../pages/adminDashboardPage";
 import NotFoundPage from "../pages/notFoundPage";
 import withSpinner from "../components/spinner";
-import PrivateRoute from "./PrivateRoute";
-import AdminRoute from './AdminRoute';
+// import PrivateRoute from "./PrivateRoute";
+// import AdminRoute from './AdminRoute';
 
 const AppRoutes = () => (
   <Routes>

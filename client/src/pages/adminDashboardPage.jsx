@@ -6,8 +6,6 @@ function adminDashboard() {
       <div className="main">
         <h1 id="login-header">Admin Dashboard</h1>
 
-        <h2>***here goes some instructions to admin user***</h2>
-
         <table>
           <thead>
             <th>Course ID</th>
