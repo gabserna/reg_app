@@ -25,12 +25,12 @@ function NavBar() {
       <nav className="navbar">
         <ul>
           <li>
-            <NavLink exact to="/" activeclassname="active">
+            <NavLink to="/" activeclassname="active">
             <FontAwesomeIcon icon={faHouse} />
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/login" activeclassname="active">
+            <NavLink to="/login" activeclassname="active">
               Login
             </NavLink>
           </li>
