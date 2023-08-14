@@ -14,7 +14,7 @@ function AdminRoute({ component: Component, ...rest }) {
         isAuthenticated && isAdmin ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/pages/loginPage" />
+          <Redirect to="./pages/loginPage" />
         )
       }
     />
