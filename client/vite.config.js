@@ -8,6 +8,7 @@ export default defineConfig({
     proxy: {
       "/classes": "http://localhost:3001",
       "/signup": "http://localhost:3001",
+      "/login": "http://localhost:3001",
     },
   },
 });

@@ -18,11 +18,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-router-dom": "^6.14.2",
-=======
     "react-router-dom": "^6.15.0",
->>>>>>> 4965d5993cda1c17c30a134eea6ef60b3f394a9c
     "react-scripts": "^2.1.3",
     "react-spinners": "^0.13.8",
     "web-vitals": "^3.4.0"
