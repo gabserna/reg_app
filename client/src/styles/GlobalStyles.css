@@ -3,13 +3,21 @@
   margin: 0 auto;
   /* padding: 1rem; */
   text-align: center;
-  background-color: #858585;
+  background-color: var(--color-bgnd);
+
+  --color-primary: #263238;
+  --color-secondary: #cfd8dc;
+  --color-mtech: #77001e;
+  --color-main: #f5f5f5;
+  --color-bgnd: #858585;
+  --color-error: #ff0000;
+
 }
 
 body {
   margin: 0 auto;
-  color: #263238;
-  background-color: #cfd8dc;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   place-items: center;
   min-width: 320px;
@@ -22,10 +30,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: auto;
   min-width: 90%;
   margin: 0;
-  /* background-color: #080710; */
 }
 
 button {
@@ -39,10 +46,10 @@ form {
   height: 450px;
   width: 400px;
   background-color: transparent;
-  border: 2px solid #77001e;
+  border: 2px solid var(--color-mtech);
   border-radius: 5px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px #77001e;
+  box-shadow: 0 0 10px var(--color-mtech);
   padding: 20px 35px;
 }
 form * {
@@ -54,8 +61,8 @@ form * {
 #loginSubmit, #registerMe {
   margin-top: 50px;
   width: 100%;
-  background-color: #77001e;
-  color: #cfd8dc;
+  background-color: var(--color-mtech);
+  color: var(--color-secondary);
   padding: 2vh;
   font-size: 18px;
   font-weight: 600;
@@ -64,8 +71,8 @@ form * {
 }
 
 .dark-mode {
-  background-color: #263238;
-  color: #cfd8dc;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 h1, h2, h3 {
@@ -76,7 +83,7 @@ h1, h2, h3 {
 table,
 th,
 td {
-  border: 1px solid white;
+  border: 1px solid var(--color-secondary);
   border-collapse: collapse;
 }
 
@@ -92,10 +99,10 @@ td {
 /*end table section*/
 
 .invalid {
-  border: 1px solid #ff0000;
+  border: 1px solid var(--color-error);
 }
 .navbar {
-  background-color: #f2f2f2;
+  background-color: var(--color-secondary);
   padding: 1px;
 }
 
@@ -111,7 +118,7 @@ td {
 
 .navbar a {
   text-decoration: none;
-  color: #333;
+  color: var(--color-mtech);
 }
 
 .navbar a.active {
@@ -124,10 +131,10 @@ td {
   justify-content: space-between;
   width: 60vw;
   background-color: transparent;
-  border: 2px solid #77001e;
+  border: 2px solid var(--color-mtech);
   border-radius: 5px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px #77001e;
+  box-shadow: 0 0 10px var(--color-mtech);
   padding: 20px 35px;
 }
 .registry h1 {
@@ -139,7 +146,7 @@ td {
   width: 46%;
   padding: 1vh;
   margin-bottom: 0.5vh;
-  border: 1px solid #77001e;
+  border: 1px solid var(--color-mtech);
   border-radius: 4px;
 }
 .registry .button-container {
@@ -153,19 +160,19 @@ td {
 input {
   height: 50px;
   width: 100%;
-  background-color: #ffffff12;
+  background-color: var(--color-secondary);
   border-radius: 3px;
   padding: 10px 10px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
-  border: 1px solid #77001e;
+  border: 1px solid var(--color-mtech);
   outline: none;
-  color: #858585 !important;
+  color: var(--color-bgnd);
   font-size: larger;
 }
 input::placeholder {
-  color: #858585 !important;
+  color: var(--color-bgnd);
 }
 .input-container {
   width: 100%;
@@ -180,10 +187,13 @@ input::placeholder {
   position: absolute;
   right: 10px;
   cursor: pointer;
-  color: #858585 !important;
+  color: var(--color-bgnd);
   font-size: larger;
 }
-
+#checkbox {
+  width: 15px;
+  height: 15px;
+}
 #regNew {
   margin-top: 2rem;
 }
@@ -200,13 +210,9 @@ input::placeholder {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-bgnd);
+    background-color: var(--color-secondary);
   }
-}
-
-.datt {
-  background-image: ".../client/public/google.svg";
 }
 
 /* spinner */
