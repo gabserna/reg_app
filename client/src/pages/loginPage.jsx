@@ -6,7 +6,6 @@ import "../styles/GlobalStyles.css";
 
 function Login() {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
 
   // Handle form submission
@@ -39,8 +38,6 @@ function Login() {
               type={passwordShown ? "text" : "password"}
               name="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
             />
             <TogglePassword
               passwordShown={passwordShown}

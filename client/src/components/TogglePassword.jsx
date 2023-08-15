@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"; // Importar PropTypes desde la biblioteca 'prop-types'
 import "font-awesome/css/font-awesome.min.css";
+import "../styles/GlobalStyles.css";
 
 function TogglePassword({ passwordShown, togglePassword }) {
   return (
@@ -9,7 +10,6 @@ function TogglePassword({ passwordShown, togglePassword }) {
   );
 }
 
-// Agregar validación de propiedades usando PropTypes
 TogglePassword.propTypes = {
   passwordShown: PropTypes.bool.isRequired,
   togglePassword: PropTypes.func.isRequired,

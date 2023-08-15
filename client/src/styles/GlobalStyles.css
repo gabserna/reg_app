@@ -183,6 +183,14 @@ input::placeholder {
   position: relative;
   margin-top: 8px;
 }
+.pwd {
+/* background-color: blue !important; */
+width: 40rem !important;
+}
+.showMe1 {
+  width: 47%;
+}
+
 .password-toggle {
   background: none;
   border: none;
@@ -191,6 +199,9 @@ input::placeholder {
   cursor: pointer;
   color: var(--color-bgnd);
   font-size: larger;
+  width: 5%;
+  padding-right: 1.5rem;
+
 }
 #checkbox {
   width: 15px;

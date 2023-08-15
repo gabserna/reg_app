@@ -4,8 +4,10 @@ import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
 function Registration() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordShown, setPasswordShown] = useState(false);
+  
   const [inputClass, setInputClass] = useState({
     firstName: "",
     email: "",
@@ -40,10 +42,12 @@ function Registration() {
         firstName: "",
       }));
     }
+    // Need to add validation logic for other fields
+    // If all validations pass, proceed with form submission
   }
 
   function togglePassword() {
-    setShowPassword(!showPassword);
+    setPasswordShown(!passwordShown);
   }
 
   return (
@@ -56,7 +60,7 @@ function Registration() {
             name="firstName"
             id="firstName"
             placeholder="First Name"
-            className={inputClass.firstName}
+            className={`${inputClass.firstName}`}
           />
           <input
             type="text"
@@ -79,25 +83,27 @@ function Registration() {
             placeholder="Full Address"
           />
           <input
-            type="text"
-            name="userName"
-            id="userName"
-            placeholder="User Name"
-          />
-          <div className="input-container">
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          <div className="input-container showMe1">
             <input
-              type={showPassword ? "text" : "password"}
+              className="pwd"
+              type={passwordShown ? "text" : "password"}
               name="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <TogglePassword
-              showPassword={showPassword}
+              passwordShown={passwordShown}
               togglePassword={togglePassword}
             />
-          </div>
 
+      </div>
           <div className="button-container">
             <button id="registerMe" type="submit" onClick={onSubmit}>
               Create NEW account
@@ -108,4 +114,5 @@ function Registration() {
     </>
   );
 }
+
 export default Registration;
