@@ -11,7 +11,6 @@
   --color-main: #f5f5f5;
   --color-bgnd: #858585;
   --color-error: #ff0000;
-
 }
 
 body {
@@ -58,7 +57,8 @@ form * {
   border: none;
 }
 
-#loginSubmit, #registerMe {
+#loginSubmit,
+#registerMe {
   margin-top: 50px;
   width: 100%;
   background-color: var(--color-mtech);
@@ -75,7 +75,9 @@ form * {
   color: var(--color-secondary);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
@@ -196,6 +198,9 @@ input::placeholder {
 }
 #regNew {
   margin-top: 2rem;
+}
+#regPasswd {
+  color: #ff0000 !important;
 }
 
 #notfound404 {
