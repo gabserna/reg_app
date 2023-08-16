@@ -16,6 +16,7 @@ const secureRoutes = require("./secureRoutes");
 const JWTstrategy = require("passport-jwt").Strategy;
 const fakeLocal = require("./fakeLocal.json")
 require("dotenv").config();
+const register = require("./Register/register-routes");
 
 const PORT = process.env.PORT || 3001;
 
@@ -25,6 +26,8 @@ const { cli } = require("winston/lib/winston/config/index.js");
 const { error } = require("console");
 
 app.use("/user", secureRoutes);
+app.use("/register", register);
+
 
 app.use(passport.initialize());
 
@@ -256,13 +259,13 @@ app.post(
       localstorage.set("token", token);
       console.log("token: ", token);
 
-      await fs.writeFile(
-        "fakeLocal.json",
-        JSON.stringify({ Authorization: `Bearer ${token}` }),
-        (err) => {
-          if (err) throw err; // we might need to put this in a try catch, but we'll ignore it since it's unrelated to passport and auth.
-        }
-      );
+      // await fs.writeFile(
+      //   "fakeLocal.json",
+      //   JSON.stringify({ Authorization: `Bearer ${token}` }),
+      //   (err) => {
+      //     if (err) throw err; // we might need to put this in a try catch, but we'll ignore it since it's unrelated to passport and auth.
+      //   }
+      // );
 
       return res.redirect(`success?message=${info.message}`);
       // }); // this is the closing brackets for the req.login
@@ -290,15 +293,17 @@ app.post("/signup", (req, res, next) => {
     // }
 
     const body = { _id: user.id, email: user.email };
-    const token = jwt.sign({ user: body }, "TOP_SECRET");
+    const token = jwt.sign({ user: body }, process.env.SECRET_KEY);
 
-    await fs.writeFile(
-      "fakeLocal.json",
-      JSON.stringify({ Authorization: `Bearer ${token}` }),
-      (err) => {
-        if (err) throw err;
-      }
-    );
+    localstorage.set("token", token);
+
+    // await fs.writeFile(
+    //   "fakeLocal.json",
+    //   JSON.stringify({ Authorization: `Bearer ${token}` }),
+    //   (err) => {
+    //     if (err) throw err;
+    //   }
+    // );
 
     return res.redirect(`/success?message=${info.message}`);
     // });
