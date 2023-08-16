@@ -1,8 +1,13 @@
 import { useState } from "react";
+import TogglePassword from "../components/TogglePassword";
+import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
 function Registration() {
-  const [showPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordShown, setPasswordShown] = useState(false);
+  
   const [inputClass, setInputClass] = useState({
     firstName: "",
     email: "",
@@ -25,7 +30,7 @@ function Registration() {
   function onSubmit(e) {
     e.preventDefault();
 
-    //Check if the first name is empty
+    // Check if the first name is empty
     if (!inputClass.firstName) {
       setInputClass((prevInputClass) => ({
         ...prevInputClass,
@@ -37,8 +42,12 @@ function Registration() {
         firstName: "",
       }));
     }
-    //neet to add validation logic for other fields
-    //if all validations pass, proceed with form submission
+    // Need to add validation logic for other fields
+    // If all validations pass, proceed with form submission
+  }
+
+  function togglePassword() {
+    setPasswordShown(!passwordShown);
   }
 
   return (
@@ -51,7 +60,7 @@ function Registration() {
             name="firstName"
             id="firstName"
             placeholder="First Name"
-            className={inputClass.firstName}
+            className={`${inputClass.firstName}`}
           />
           <input
             type="text"
@@ -74,22 +83,32 @@ function Registration() {
             placeholder="Full Address"
           />
           <input
-            type="text"
-            name="userName"
-            id="userName"
-            placeholder="User Name"
-          />
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            id="password"
-            placeholder="Password"
-          />
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          <div className="input-container showMe1">
+            <input
+              className="pwd"
+              type={passwordShown ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <TogglePassword
+              passwordShown={passwordShown}
+              togglePassword={togglePassword}
+            />
+
+      </div>
           <div className="button-container">
-  <button id="registerMe" type="submit" onClick={onSubmit}>
-    Create NEW account
-  </button>
-</div>
+            <button id="registerMe" type="submit" onClick={onSubmit}>
+              Create NEW account
+            </button>
+          </div>
         </form>
       </div>
     </>

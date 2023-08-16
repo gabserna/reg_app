@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LoadingSpinner from "../components/spinner";
+import TogglePassword from "../components/TogglePassword"; // Import el nuevo componente
 import "font-awesome/css/font-awesome.min.css";
-//import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/GlobalStyles.css";
 
 function Login() {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordShown, setPasswordShown] = useState(false); // Combine `showPassword` y `passwordShown` en una sola variable
+  const [passwordShown, setPasswordShown] = useState(false);
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -22,7 +20,6 @@ function Login() {
 
   return (
     <>
-      <LoadingSpinner />
       <div className="main">
         <form className="loginForm" onSubmit={handleSubmit}>
           <h1>Access</h1>
@@ -41,12 +38,11 @@ function Login() {
               type={passwordShown ? "text" : "password"}
               name="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="password-toggle" onClick={togglePassword}>
-              <i className={`fa ${passwordShown ? "fa-eye" : "fa-eye-slash"}`} />
-            </button>
+            <TogglePassword
+              passwordShown={passwordShown}
+              togglePassword={togglePassword}
+            />
           </div>
 
           <button type="submit" id="loginSubmit">
@@ -60,4 +56,5 @@ function Login() {
     </>
   );
 }
+
 export default Login;

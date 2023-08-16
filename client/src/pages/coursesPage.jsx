@@ -14,7 +14,7 @@ function Courses() {
   return (
     <>
       <div className="main">
-        <h1 id="login-header">Classes</h1>
+        <h1 id="login-header">Select your classes</h1>
         <table>
 {/*      <thead>
             <tr>
@@ -39,7 +39,7 @@ function Courses() {
                 <td>{classItem.credit_hours}</td>
                 <td>{classItem.tuition_cost}</td>
                 <td>
-                  <p>select <input type="checkbox" name="" id="" /></p>
+                  <p>select <input type="checkbox" name="" id="checkbox" /></p>
                 </td>
               </tr>
             ))}
