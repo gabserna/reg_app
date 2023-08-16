@@ -36,7 +36,7 @@ function Login() {
     <>
       <div className="main">
         <form className="loginForm" onSubmit={handleSubmit}>
-          <h1>Access</h1>
+          <h2>Access</h2>
           <h3>with your credentials:</h3>
           <div className="input-container">
             <input

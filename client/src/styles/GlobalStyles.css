@@ -9,8 +9,9 @@
   --color-secondary: #cfd8dc;
   --color-mtech: #77001e;
   --color-main: #f5f5f5;
-  --color-bgnd: #858585;
+  --color-bgnd: #9e9e9e;
   --color-error: #ff0000;
+  --color-input: #eeeeee;
 }
 
 body {
@@ -42,14 +43,15 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 450px;
-  width: 400px;
+  height: auto;
+  width: auto;
   background-color: transparent;
-  border: 2px solid var(--color-mtech);
+  border: 1px solid var(--color-mtech);
   border-radius: 5px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px var(--color-mtech);
-  padding: 20px 35px;
+  box-shadow: 0 0 6px var(--color-mtech);
+  margin-top: 2vw;
+  padding: 1vw 2vw;
 }
 form * {
   font-family: "Poppins", sans-serif;
@@ -104,7 +106,7 @@ td {
   border: 1px solid var(--color-error);
 }
 .navbar {
-  background-color: var(--color-secondary);
+  background-color: var(--color-mtech);
   padding: 1px;
 }
 
@@ -115,12 +117,12 @@ td {
 }
 
 .navbar li {
-  margin-right: 20px;
+  margin: 0;
 }
 
 .navbar a {
   text-decoration: none;
-  color: var(--color-mtech);
+  color: var(--color-main);
 }
 
 .navbar a.active {
@@ -128,27 +130,20 @@ td {
 }
 .registry {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 60vw;
+  flex-direction: column;
+  width: 25vw;
   background-color: transparent;
-  border: 2px solid var(--color-mtech);
-  border-radius: 5px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px var(--color-mtech);
-  padding: 20px 35px;
+  padding: 1rem;
 }
 .registry h1 {
   width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 .registry input {
-  width: 46%;
+  width: 80%;
   padding: 1vh;
-  margin-bottom: 0.5vh;
-  border: 1px solid var(--color-mtech);
+  margin-bottom: 1vh;
   border-radius: 4px;
 }
 .registry .button-container {
@@ -156,46 +151,31 @@ td {
   width: 100%;
 }
 .button-container button {
-  width: 40% !important;
+  width: 70% !important;
 }
 
 input {
-  height: 50px;
-  width: 100%;
-  background-color: var(--color-secondary);
-  border-radius: 3px;
-  padding: 10px 10px;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 300;
-  border: 1px solid var(--color-mtech);
-  outline: none;
-  color: var(--color-bgnd);
-  font-size: larger;
+  height: 3vh;
+  width: 90%;
+  background-color: var(--color-input);
+  font-size: 2vh;
+  color: var(--color-mtech);
 }
-input::placeholder {
-  color: var(--color-bgnd);
+
+.main h3 {
+  margin-bottom: 1.5rem;
 }
+
 .input-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-top: 8px;
-}
-.pwd {
-/* background-color: blue !important; */
-width: 40rem !important;
-}
-.showMe1 {
-  width: 47%;
+  /* border: 4px solid green; */
+  width: 100% !important;
+  margin-bottom: 0.5rem;
 }
 
 .password-toggle {
   background: none;
-  border: none;
   position: absolute;
-  right: 10px;
+  right: 12%;
   cursor: pointer;
   color: var(--color-bgnd);
   font-size: larger;
