@@ -19,6 +19,12 @@
 - npm install --save @fortawesome/free-solid-svg-icons
 - npm install --save react-spinners
 
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @fontsource/roboto
+npm install @mui/icons-material
+npm install @mui/icons-material
+
 
 
 after
