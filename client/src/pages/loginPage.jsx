@@ -4,7 +4,24 @@ import TogglePassword from "../components/TogglePassword"; // Import el nuevo co
 import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
+import * as React from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import FilledInput from "@mui/material/FilledInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
 function Login() {
+  const [showPassword, setShowPassword] = React.useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   const [username, setUsername] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [serverData, setServerData] = useState(null);
@@ -21,7 +38,6 @@ function Login() {
       });
   }, []); //Empty dependency array to fetch data only once when the component mounts
 
-
   // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,10 +50,41 @@ function Login() {
 
   return (
     <>
+      <Box>
+        <TextField
+          required
+          id="filled-required"
+          label="Username"
+          defaultValue=""
+          variant="filled"
+        />
+
+        <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+          <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+          <FilledInput
+            id="filled-adornment-password"
+            type={showPassword ? "text" : "password"}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+      </Box>
+
       <div className="main">
         <form className="loginForm" onSubmit={handleSubmit}>
           <h2>Access</h2>
           <h3>with your credentials:</h3>
+
           <div className="input-container">
             <input
               type="text"
@@ -69,7 +116,6 @@ function Login() {
 
         {/* Render the fetched data */}
         {serverData && <p>Server Data: {serverData.someProperty}</p>}
-
       </div>
     </>
   );
