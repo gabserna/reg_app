@@ -83,12 +83,37 @@ h3 {
   margin: 0;
   padding: 0;
 }
-/*table section*/
-table,
-th,
-td {
-  border: 1px solid var(--color-secondary);
-  border-collapse: collapse;
+
+.classesBox {
+  
+  /* border: 2px solid red; */
+  width: 80%;
+  height: 80vh;
+  overflow-y: scroll;
+  margin: 2rem;
+}
+
+
+.scrollable {
+  font-size: 10px;
+  width: 90%;
+  height: 70vh;
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--color-mtech); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary); 
 }
 
 table {

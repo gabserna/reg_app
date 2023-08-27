@@ -1,5 +1,12 @@
-import { useState, useEffect } from "react";
-import "../styles/GlobalStyles.css";
+import React, { useState, useEffect } from "react";
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
 
 function Courses() {
   const [classesData, setClassesData] = useState([]);
@@ -8,46 +15,53 @@ function Courses() {
     fetch("./classes")
       .then((response) => response.json())
       .then((data) => setClassesData(data))
-      .catch((error) => console.error("Error fetching classes:", error));
+      .catch((error) => {
+        console.error("Error fetching classes:", error);
+      });
   }, []);
 
+  const filteredClassesData = classesData.slice(1);
+
   return (
-    <>
-      <div className="main">
-        <h1 id="login-header">Select your classes</h1>
-        <table>
-{/*      <thead>
-            <tr>
-              <th className="bold-header">Course ID</th>
-              <th className="bold-header">Course Title</th>
-              <th className="bold-header">Course Description</th>
-              <th className="bold-header">Classroom Number</th>
-              <th className="bold-header">Capacity</th>
-              <th className="bold-header">Credit Hours</th>
-              <th className="bold-header">Tuition Cost</th>
-              <th className="bold-header">Actions</th>
-            </tr>
-          </thead> */}
-          <tbody>
-            {classesData.map((classItem, index) => (
-              <tr key={index}>
-                <td>{classItem.course_id}</td>
-                <td>{classItem.course_title}</td>
-                <td id="course_description">{classItem.course_description}</td>
-                <td>{classItem.classroom_number}</td>
-                <td>{classItem.capacity}</td>
-                <td>{classItem.credit_hours}</td>
-                <td>{classItem.tuition_cost}</td>
-                <td>
-                  <p>select <input type="checkbox" name="" id="checkbox" /></p>
-                </td>
-              </tr>
+    <div className="classesBox">
+      <h1 id="login-header" className="sticky-header">Select your classes</h1>
+      <TableContainer component={Paper} style={{ background: "transparent", overflowX: 'hidden' }}>
+        <Table stickyHeader aria-label="sticky table">
+        <TableHead>
+            <TableRow>
+              <TableCell align="center" className="bold">Course ID</TableCell>
+              <TableCell align="center" className="bold-header">Course Title</TableCell>
+              <TableCell align="center" className="bold-header">Course Description</TableCell>
+              <TableCell align="center" className="bold-header">Room #</TableCell>
+              <TableCell align="center" className="bold-header">Capacity</TableCell>
+              <TableCell align="center" className="bold-header">Credits</TableCell>
+              <TableCell align="center" className="bold-header">Tuition Cost</TableCell>
+              <TableCell align="center" className="bold-header">Register Class</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {filteredClassesData.map((classItem, index) => (
+              <TableRow key={index}>
+                <TableCell>{classItem.course_id}</TableCell>
+                <TableCell>{classItem.course_title}</TableCell>
+                <TableCell id="course_description">
+                  {classItem.course_description}
+                </TableCell>
+                <TableCell>{classItem.classroom_number}</TableCell>
+                <TableCell>{classItem.capacity}</TableCell>
+                <TableCell>{classItem.credit_hours}</TableCell>
+                <TableCell>{classItem.tuition_cost}</TableCell>
+                <TableCell>
+                  <Button size="small" style={{ background: 'var(--color-mtech)', color: 'var(--color-secondary)'}}>Add</Button>
+                </TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
-        <button type="submit">Send Selection</button><br />
-      </div>
-    </>
+          </TableBody>
+        </Table>
+        
+      </TableContainer>
+    </div>
   );
 }
+
 export default Courses;

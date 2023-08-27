@@ -1,6 +1,7 @@
-const {Client} = require('pg');
-require("dotenv").config();
+const { Client } = require('pg');
+const clientLogger = require('./winston');
 
+require("dotenv").config();
 
 const client = new Client({
     host: process.env.PGHOST,
@@ -13,4 +14,12 @@ const client = new Client({
     }
 });
 
-module.exports = client
+client.connect((err) => {
+  if (err) {
+    clientLogger.logError('Error connecting to PostgreSQL: ' + err.message);
+  } else {
+    clientLogger.logInfo('Connected to PostgreSQL');
+  }
+});
+
+module.exports = client;

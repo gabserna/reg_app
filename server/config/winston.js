@@ -1,7 +1,5 @@
-//install npm i winston
 const winston = require('winston');
 
-//configure logger
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
@@ -11,6 +9,15 @@ const logger = winston.createLogger({
         ]
 });
 
-//log messages
-logger.log('info', 'This is an informational message.');
-logger.log('error', 'An error ocurred.');
+const logInfo = (message) => {
+  logger.info(message);
+};
+
+const logError = (message) => {
+  logger.error(message);
+};
+
+module.exports = {
+  logInfo,
+  logError
+};
