@@ -17,9 +17,9 @@ const { v4: uuidv4 } = require("uuid");
 const users = require("./users.json");
 const secureRoutes = require("./routes/secureRoutes.js");
 const JWTstrategy = require("passport-jwt").Strategy;
-const fakeLocal = require("./fakeLocal.json")
+const fakeLocal = require("./utils/fakeLocal.json")
 require("dotenv").config();
-const register = require("./Register/register-routes");
+const register = require("./routes/register-routes");
 
 const PORT = process.env.PORT || 3001;
 const app = express();

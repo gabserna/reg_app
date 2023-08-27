@@ -1,5 +1,5 @@
-const User = require("../models/user.model");
-const Course = require("../models/course.model");
+const User = require("../middleware/UserModel");
+const Course = require("../middleware/CourseModel");
 
 class CourseController {
   getAllCourses(req, res) {

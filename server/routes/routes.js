@@ -1,4 +1,4 @@
-const express = requiere('express');
+const express = require('express');
 const router = express.Router(); //eslint-disable-line new-cap
 const AdminController = require('../controllers/AdminController');
 const CourseController = require('../controllers/CourseController');
