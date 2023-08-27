@@ -23,9 +23,23 @@ class CourseController {
   }
 
   getFilteredCourses(req, res) {
-    // Solo se puede utilizar la opción 'i' si es una cadena de texto;
-    //se produce un error si es un número
+    // Implement logic for getting filtered courses
+  }
+
+  getCourses(req, res) {
+    // Implement logic for creating a new course
+  }
+  createCourse(req, res) {
+    // Implement logic for creating a new course
+  }
+
+  updateCourse(req, res) {
+    // Implement logic for updating a course
+  }
+
+  deleteCourse(req, res) {
+    // Implement logic for deleting a course
   }
 }
 
-module.exports = CourseController;
+module.exports = new CourseController();

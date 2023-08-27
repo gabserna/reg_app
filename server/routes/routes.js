@@ -3,6 +3,8 @@ const router = express.Router(); //eslint-disable-line new-cap
 const AdminController = require('../controllers/AdminController');
 const CourseController = require('../controllers/CourseController');
 
+router.get('/homie', AdminController.getAllUsers);
+
 router.get('/allUsers', AdminController.getAllUsers);
 router.get('/filteredUsers', AdminController.getFilteredUsers);
 router.get('/getUserCourses', AdminController.getUserCourses);

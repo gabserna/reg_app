@@ -179,14 +179,14 @@ app.get("/test", (req, res) => {
   res.json({ message: "Hello from Server GS!!!"});
 });
 
-app.use(passport);
-app.use(logEvent);
-app.use(sanitize);
-app.use(helmet());
-app.use('/api', AuthRoutes);
-app.use('/api', auth, UserRoutes);
-app.use('/api', auth, CourseRoutes);
-app.use('/api', auth, verifyAdmin, AdminRoutes);
+// app.use(passport);
+// app.use(logEvent);
+// app.use(sanitize);
+// app.use(helmet());
+// app.use('/', AuthRoutes);
+// app.use('/', auth, UserRoutes);
+// app.use('/', auth, CourseRoutes);
+// app.use('/', auth, verifyAdmin, AdminRoutes);
 
 // All GET request not handled with above middleware will return our React app
 // This will avoid Cannot GET /foo message if a user manually enters a client-side ....
