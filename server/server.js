@@ -24,6 +24,15 @@ const register = require("./routes/register-routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+  // Realiza acciones de limpieza si es necesario
+  process.exit(1); // Cierra la aplicación con un código de salida no exitoso
+});
+
+
+
 const { cli } = require("winston/lib/winston/config/index.js");
 const { error } = require("console");
 
@@ -312,5 +321,5 @@ app.post("/signup", (req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
-  // client.connect();
+  
 });

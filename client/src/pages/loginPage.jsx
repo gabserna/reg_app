@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import TogglePassword from "../components/TogglePassword"; // Import el nuevo componente
 import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
@@ -44,66 +43,51 @@ function Login() {
     // login logic here
   };
 
-  function togglePassword() {
-    setPasswordShown(!passwordShown);
-  }
-
   return (
     <>
-      <Box>
-        <TextField
-          required
-          id="filled-required"
-          label="Username"
-          defaultValue=""
-          variant="filled"
-        />
-
-        <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
-          <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
-          <FilledInput
-            id="filled-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-      </Box>
-
       <div className="main">
         <form className="loginForm" onSubmit={handleSubmit}>
           <h2>Access</h2>
           <h3>with your credentials:</h3>
 
-          <div className="input-container">
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div className="input-container">
-            <input
-              type={passwordShown ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-            />
-            <TogglePassword
-              passwordShown={passwordShown}
-              togglePassword={togglePassword}
-            />
+          <div>
+          <Box
+      display="flex"
+      flexDirection={"column"}
+      width={"100%"}
+    >
+              <TextField
+                required
+                id="filled-required"
+                label="Username"
+                defaultValue=""
+                variant="filled"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+
+              <FormControl sx={{ mt: 2 }} variant="filled">
+                <InputLabel htmlFor="filled-adornment-password">
+                  Password *
+                </InputLabel>
+                <FilledInput
+                  id="filled-adornment-password"
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
+            </Box>
           </div>
 
           <button type="submit" id="loginSubmit">
@@ -114,7 +98,6 @@ function Login() {
           </label>
         </form>
 
-        {/* Render the fetched data */}
         {serverData && <p>Server Data: {serverData.someProperty}</p>}
       </div>
     </>

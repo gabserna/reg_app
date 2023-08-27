@@ -1,5 +1,4 @@
 import { useState } from "react";
-import TogglePassword from "../components/TogglePassword";
 import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
@@ -46,69 +45,28 @@ function Registration() {
     // If all validations pass, proceed with form submission
   }
 
-  function togglePassword() {
-    setPasswordShown(!passwordShown);
-  }
 
   return (
     <>
       <div className="main">
         <form className="registry">
           <h1 id="login-header">User Registration</h1>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="First Name"
-            className={`${inputClass.firstName}`}
-          />
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            placeholder="Last Name"
-          />
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email"
-            onBlur={handleEmailChange}
-            className={inputClass.email}
-          />
-          <input
-            type="text"
-            name="address"
-            id="address"
-            placeholder="Full Address"
-          />
-          <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
+          <input type="text" name="firstName" id="firstName" placeholder="First Name" className={`${inputClass.firstName}`}/>
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+          <input type="text" name="email" id="email" placeholder="Email" onBlur={handleEmailChange} className={inputClass.email} />
+          <input type="text" name="address" id="address" placeholder="Full Address" />
+          <input type="text" name="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          
           <div className="input-container showMe1">
-            <input
-              className="pwd"
-              type={passwordShown ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <TogglePassword
-              passwordShown={passwordShown}
-              togglePassword={togglePassword}
-            />
-
-      </div>
+            <input className="pwd" type={passwordShown ? "text" : "password"} name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+          
           <div className="button-container">
             <button id="registerMe" type="submit" onClick={onSubmit}>
               Create NEW account
             </button>
           </div>
+          
         </form>
       </div>
     </>

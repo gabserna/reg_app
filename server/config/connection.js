@@ -14,12 +14,14 @@ const client = new Client({
     }
 });
 
-client.connect((err) => {
-  if (err) {
-    clientLogger.logError('Error connecting to PostgreSQL: ' + err.message);
-  } else {
+// this comes from winston.js
+// try connection and manage errors
+client.connect()
+  .then(() => {
     clientLogger.logInfo('Connected to PostgreSQL');
-  }
-});
+  })
+  .catch((error) => {
+    clientLogger.logError('Error connecting DB: ' + error.message);
+  });
 
 module.exports = client;

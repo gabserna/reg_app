@@ -17,6 +17,7 @@ const logError = (message) => {
   logger.error(message);
 };
 
+// this goes to connection.js
 module.exports = {
   logInfo,
   logError
