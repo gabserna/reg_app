@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require('cors');
-const app = express();
 const { auth } = require('express-openid-connect');
 
 const client = require("./config/connection.js");
@@ -16,7 +15,7 @@ const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const { v4: uuidv4 } = require("uuid");
 const users = require("./users.json");
-const secureRoutes = require("./secureRoutes");
+const secureRoutes = require("./routes/secureRoutes.js");
 const JWTstrategy = require("passport-jwt").Strategy;
 const fakeLocal = require("./fakeLocal.json")
 require("dotenv").config();
