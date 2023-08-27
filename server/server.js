@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const { auth } = require('express-openid-connect');
 
-const client = require("./config/connection.js");
+const client = require("./config/connection");
 const path = require("path");
 const jwt = require("jsonwebtoken");
 const localstorage = require("local-storage");
@@ -30,11 +30,7 @@ const { error } = require("console");
 //use CORS
 app.use(cors());
 app.use('/', require('./routes/routes.js'));
-
 app.use("/register", register);
-app.use("/register", register);
-
-
 app.use(passport.initialize());
 
 function getJwt() {
@@ -190,9 +186,9 @@ app.get("/test", (req, res) => {
 
 // All GET request not handled with above middleware will return our React app
 // This will avoid Cannot GET /foo message if a user manually enters a client-side ....
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, clientBuildPath, 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, clientBuildPath, 'index.html'));
+// });
 // *********************************************************
 
 app.get("/", (req, res) => {
@@ -274,11 +270,6 @@ app.post(
         return res.redirect(`/failed?message=${info.message}`);
       }
 
-      // It doesn't seem like the req.login() does anything for us when using JWT.
-      // I could be wrong though. You'll have to play around with it yourself.
-      // req.login(user, { session: false }, async (error) => {
-      // console.log("using req.login...");
-
       const body = { _id: user.id, email: user.email };
 
       const token = jwt.sign({ user: body }, process.env.SECRET_KEY);
@@ -286,13 +277,6 @@ app.post(
       localstorage.set("token", token);
       console.log("token: ", token);
 
-      // await fs.writeFile(
-      //   "fakeLocal.json",
-      //   JSON.stringify({ Authorization: `Bearer ${token}` }),
-      //   (err) => {
-      //     if (err) throw err; // we might need to put this in a try catch, but we'll ignore it since it's unrelated to passport and auth.
-      //   }
-      // );
 
       return res.redirect(`success?message=${info.message}`);
       // }); // this is the closing brackets for the req.login
@@ -314,23 +298,12 @@ app.post("/signup", (req, res, next) => {
       return res.redirect(`failed?message=${info.message}`);
     }
 
-    // req.login(user, { session: false }, async function (err) {
-    // if (err) {
-    //   return next(err);
-    // }
 
     const body = { _id: user.id, email: user.email };
     const token = jwt.sign({ user: body }, process.env.SECRET_KEY);
 
     localstorage.set("token", token);
 
-    // await fs.writeFile(
-    //   "fakeLocal.json",
-    //   JSON.stringify({ Authorization: `Bearer ${token}` }),
-    //   (err) => {
-    //     if (err) throw err;
-    //   }
-    // );
 
     return res.redirect(`/success?message=${info.message}`);
     // });
@@ -339,16 +312,5 @@ app.post("/signup", (req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
+  client.connect();
 });
-
-client.connect();
-
-
-
-
-
-
-
-
-
-
