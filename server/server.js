@@ -1,5 +1,9 @@
-const client = require("./config/connection.js");
 const express = require("express");
+const cors = require('cors');
+const app = express();
+const { auth } = require('express-openid-connect');
+
+const client = require("./config/connection.js");
 const path = require("path");
 const jwt = require("jsonwebtoken");
 const localstorage = require("local-storage");
@@ -19,13 +23,16 @@ require("dotenv").config();
 const register = require("./Register/register-routes");
 
 const PORT = process.env.PORT || 3001;
-
 const app = express();
 
 const { cli } = require("winston/lib/winston/config/index.js");
 const { error } = require("console");
 
-app.use("/user", secureRoutes);
+//use CORS
+app.use(cors());
+app.use('/', require('./routes/routes.js'));
+
+app.use("/register", register);
 app.use("/register", register);
 
 
@@ -167,6 +174,27 @@ app.get("/classes", (req, res) => {
   });
   client.end;
 });
+
+// *********************************************************
+app.get("/test", (req, res) => {
+  res.json({ message: "Hello from Server GS!!!"});
+});
+
+app.use(passport);
+app.use(logEvent);
+app.use(sanitize);
+app.use(helmet());
+app.use('/api', AuthRoutes);
+app.use('/api', auth, UserRoutes);
+app.use('/api', auth, CourseRoutes);
+app.use('/api', auth, verifyAdmin, AdminRoutes);
+
+// All GET request not handled with above middleware will return our React app
+// This will avoid Cannot GET /foo message if a user manually enters a client-side ....
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, clientBuildPath, 'index.html'));
+});
+// *********************************************************
 
 app.get("/", (req, res) => {
   console.log("----- begin of / route ----");

@@ -12,6 +12,7 @@
 - npm i winston
 - npm i morgan --save
 - npm i local-storage --save
+- npm i cors
 
 # client side:
 - npm i web-vitals
@@ -24,6 +25,7 @@ npm install @mui/material @mui/styled-engine-sc styled-components
 npm install @fontsource/roboto
 npm install @mui/icons-material
 npm install @mui/icons-material
+npm install axios
 
 
 
