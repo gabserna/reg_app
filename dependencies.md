@@ -26,6 +26,10 @@
 - npm install @mui/icons-material
 - npm install @mui/icons-material
 - npm install axios
+- npm install --save react-toastify
+npm install @mui/material @emotion/react @emotion/styled
+
+
 
 after
 - npm install

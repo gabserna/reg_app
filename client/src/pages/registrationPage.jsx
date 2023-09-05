@@ -1,71 +1,87 @@
-import React, { useState } from "react";   // future add useEffect
+import React, { useState } from "react";
 import { TextField, FormControl, InputLabel, FilledInput, Button, Box, IconButton, InputAdornment } from "@mui/material";
-import "font-awesome/css/font-awesome.min.css";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "../styles/GlobalStyles.css";
-
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Registration() {
   const [username, setUsername] = useState("");
-  //const [password, setPassword] = useState("");
-  //const [passwordShown, setPasswordShown] = useState(false);
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const [inputClass, setInputClass] = useState({
     firstName: "",
+    lastName: "",
     email: "",
+    address: "",
+    phone: "",
+    userName: "",
+    password: "",
   });
+
+  // Define los campos requeridos
+  const requiredFields = ["firstName", "lastName", "userName", "password"];
+
+  // Función para verificar si hay campos vacíos
+  const isAnyFieldEmpty = () => {
+    for (const field of requiredFields) {
+      if (inputClass[field] === "") {
+        return true;
+      }
+    }
+    return false;
+  };
 
   function validateEmail(input) {
     let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     return validRegex.test(input);
   }
 
-  function handleEmailChange(event) {
-    const isValidEmail = validateEmail(event.target.value);
-
-    setInputClass((prevInputClass) => ({
-      ...prevInputClass,
-      email: isValidEmail ? "" : "invalid",
-    }));
+  function handleBlur(fieldName, event) {
+    const { name, value } = event.target;
+    if (name === "email") {
+      const isValidEmail = validateEmail(value);
+      setInputClass((prevInputClass) => ({
+        ...prevInputClass,
+        [name]: isValidEmail ? "" : "invalid",
+      }));
+    } else {
+      setInputClass((prevInputClass) => ({
+        ...prevInputClass,
+        [name]: value.trim() === "" ? "invalid" : "",
+      }));
+    }
   }
 
   function onSubmit(e) {
     e.preventDefault();
 
-    // Check if the first name is empty
-    if (!inputClass.firstName) {
-      setInputClass((prevInputClass) => ({
-        ...prevInputClass,
-        firstName: "invalid",
-      }));
+    //escribe una validacion para que el usuario no se registre si hay campos vacios
+
+
+
+    // Verifica que ningún campo obligatorio esté en blanco
+    const requiredFields = ["firstName", "lastName", "userName", "password"];
+    let isAnyFieldInvalid = false;
+
+    requiredFields.forEach((field) => {
+      if (inputClass[field] === "invalid" || inputClass[field] === "") {
+        setInputClass((prevInputClass) => ({
+          ...prevInputClass,
+          [field]: "invalid",
+        }));
+        isAnyFieldInvalid = true;
+      }
+    });
+
+    if (isAnyFieldInvalid) {
+      toast.error("Please complete all required fields.");
     } else {
-      setInputClass((prevInputClass) => ({
-        ...prevInputClass,
-        firstName: "",
-      }));
+      toast.success("Registration successful!");
     }
-    // Need to add validation logic for other fields
-    // If all validations pass, proceed with form submission
   }
 
-  // useEffect(() => {
-  //   // Perform an HTTP GET request to your server when the component mounts
-  //   fetch("/login")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setServerData(data); // Update the state with the fetched data
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //     });
-  // }, []); //Empty dependency array to fetch data only once when the component mounts
 
-  // Handle form submission
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   // login logic here
-  // };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
@@ -74,30 +90,35 @@ function Registration() {
 
   return (
     <div className="main">
-      <form className="registry">
+      <form className="registry" onSubmit={onSubmit}>
         <h1 id="login-header">User Registration</h1>
 
-        <Box display="flex" flexDirection={"column"} width={"100%"}>
+        <Box display="flex" flexDirection="column" width="100%">
           <TextField
             label="First Name"
             variant="filled"
             name="firstName"
             id="firstName"
+            required
             error={inputClass.firstName === "invalid"}
-            helperText={inputClass.firstName === "invalid" ? "Invalid First Name" : ""}
+            helperText={inputClass.firstName === "invalid" ? "Required" : ""}
           />
           <TextField
             label="Last Name"
             variant="filled"
             name="lastName"
             id="lastName"
+            required
+            error={inputClass.lastName === "invalid"}
+            helperText={inputClass.lastName === "invalid" ? "Required" : ""}
           />
           <TextField
             label="Email"
             variant="filled"
             name="email"
             id="email"
-            onBlur={handleEmailChange}
+            required
+            onBlur={(e) => handleBlur("email", e)}
             error={inputClass.email === "invalid"}
             helperText={inputClass.email === "invalid" ? "Invalid Email" : ""}
           />
@@ -106,15 +127,27 @@ function Registration() {
             variant="filled"
             name="address"
             id="address"
+            required
+          />
+          <TextField
+            label="Phone Number"
+            variant="filled"
+            name="phone"
+            id="phone"
+            required
           />
           <TextField
             label="Username"
             variant="filled"
-            name="username"
+            name="userName"
+            id="userName"
+            // error={inputClass.userName === "invalid"}
+            // helperText={inputClass.userName === "invalid" ? "Required" : ""}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            onBlur={(e) => handleBlur("userName", e)}
           />
-          <FormControl sx={{ mt: 2 }} variant="filled">
+          <FormControl sx={{ mt: 0 }} variant="filled">
             <InputLabel htmlFor="filled-adornment-password">
               Password *
             </InputLabel>
@@ -137,11 +170,17 @@ function Registration() {
           </FormControl>
         </Box>
         <div className="button-container">
-          <Button variant="contained" id="registerMe" onClick={onSubmit}>
-            Create NEW account
+          <Button
+          variant="contained"
+          id="registerMe"
+          type="submit"
+          >
+            Create a New Account
           </Button>
         </div>
       </form>
+      {/* Agrega el componente ToastContainer al final */}
+      <ToastContainer />
     </div>
   );
 }

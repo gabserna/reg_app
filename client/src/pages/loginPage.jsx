@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { TextField, FormControl, InputLabel, FilledInput, Box, IconButton, InputAdornment } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);

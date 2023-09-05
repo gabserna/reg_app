@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/GlobalStyles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { FormControlLabel, Switch } from "@mui/material";
 
 function darkMode() {
   const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -20,13 +21,14 @@ function NavBar() {
     darkMode();
     setIsDarkMode(!isDarkMode);
   };
+
   return (
     <>
       <nav className="navbar">
         <ul>
           <li>
             <NavLink to="/" activeclassname="active">
-            <FontAwesomeIcon icon={faHouse} />
+              <FontAwesomeIcon icon={faHouse} />
             </NavLink>
           </li>
           <li>
@@ -55,13 +57,17 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
-            <button
-              id="darkModeButton"
-              onClick={toggleDarkMode}
-              aria-label="Toggle dark mode"
-            >
-              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
-            </button>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={isDarkMode}
+                  onChange={toggleDarkMode}
+                  color="error"
+                  inputProps={{ "aria-label": "Toggle dark mode" }}
+                />
+              }
+              label={isDarkMode ? "Dark Mode" : "Light Mode"}
+            />
           </li>
         </ul>
       </nav>
