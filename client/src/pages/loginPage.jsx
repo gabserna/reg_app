@@ -1,16 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { TextField, FormControl, InputLabel, FilledInput, Box, IconButton, InputAdornment } from "@mui/material";
 import "font-awesome/css/font-awesome.min.css";
 import "../styles/GlobalStyles.css";
 
-import * as React from "react";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import FilledInput from "@mui/material/FilledInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
@@ -22,7 +15,7 @@ function Login() {
   };
 
   const [username, setUsername] = useState("");
-  const [passwordShown, setPasswordShown] = useState(false);
+  //const [passwordShown, setPasswordShown] = useState(false);
   const [serverData, setServerData] = useState(null);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
-//import { Route, Redirect } from 'react-router-dom';
+//import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from '../context/AuthFunctions';
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -11,7 +11,7 @@ function PrivateRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) =>
-        isAuthenticated ? <Component {...props} /> : <Redirect to="./pages/loginPage" />
+        isAuthenticated ? <Component {...props} /> : <Redirect to="../pages/coursesPage" />
       }
     />
   );
